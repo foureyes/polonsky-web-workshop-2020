@@ -1,0 +1,89 @@
+I"Y<section>
+  <h2 class="question" id="sooo-you-want-to-make-a-website">Sooo&#8230; you want to make a website.</h2>
+
+  <h2 class="question fragment" id="whats-the-first-thing-you-do-sign-up-for-a-cms-and-start-adding-content-right-away">What&#39;s the first thing you do? Sign up for a CMS and start adding content right away?</h2>
+
+  <h2 class="question fragment" id="section">🤔</h2>
+
+</section>
+
+<section class="intro-slide">
+  <h1 id="project-definition-and-documentation">Project Definition and Documentation</h1>
+
+  <h3 id="polonsky--brine-001">Polonsky / Brine-001</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="project-definition">Project Definition</h2>
+
+  <p><strong>What are some items to consider when defining a project (web or otherwise)?</strong></p>
+
+  <p>1 {:.fragment} Goals / Objectives
+2 {:.fragment} Success Criteria
+	* {:.fragment} measurable values that indicate the success of your project
+	* {:.fragment} number of users
+	* {:.fragment} page views</p>
+  <ol>
+    <li class="fragment">Target Audience</li>
+    <li class="fragment">Risks</li>
+  </ol>
+</section>
+
+<section>
+  <h2 id="whats-everyone-else-doing">What&#39;s Everyone Else Doing?</h2>
+
+  <p><strong>It&#39;s useful to see what&#39;s already out there or what best practices already exist early on in your project</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">standards - are there standards in your domain for publishing work online?</li>
+    <li class="fragment">&quot;competitive&quot; landscape - look at similar projects&#8230;
+      <ul>
+        <li class="fragment">what are the components that are relevant to your project?</li>
+        <li class="fragment">what parts are particularly successful?</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="site-requirements">Site Requirements</h2>
+
+  <p><strong>What does your site <em>do</em>?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><a href="">Use cases</a></li>
+    <li class="fragment"><a href="">User stories</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="visual-design-information-architecture-user-experience">Visual Design, Information Architecture, User Experience</h2>
+
+  <ul>
+    <li class="fragment"><a href="https://xd.adobe.com/ideas/process/information-architecture/top-5-content-inventory-tips-information-architecture/">Content Inventory</a> - a catalog of information on your site (basically a list or a spreadsheet!)</li>
+    <li class="fragment"><a href="https://xd.adobe.com/ideas/process/information-architecture/sitemap-and-information-architecture/#:~:text=Visual%20sitemaps%20are%20a%20hierarchical,(atomic%20unit%20of%20content).">(Visual) Site map</a> - a diagram that shows the pages in your site and their relationship with each other</li>
+    <li class="fragment"><a href="https://webstyleguide.com/4-information-architecture.html">Wireframes</a> - a diagram showing the layout and the information present on a page; can be a simple &quot;low fidelity&quot; hand-drawn picture to an actual HTML mock-up</li>
+    <li class="fragment">Prototype</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="tools">Tools</h2>
+
+  <p>Some applications for creating wireframes and site maps (in order of approximate ease-of-use)</p>
+
+  <ol>
+    <li class="fragment"><a href="https://balsamiq.cloud/">Balsamiq</a></li>
+    <li class="fragment"><a href="https://www.figma.com/">Figma</a></li>
+    <li class="fragment">Adobe Xd</li>
+    <li class="fragment">Axure</li>
+    <li class="fragment">Classic diagramming tools like: Omnigraffle,  Visio, Dia</li>
+    <li class="fragment">Basically&#8230; any drawing tools (pen-and-paper, Photoshoph, etc.)</li>
+  </ol>
+
+</section>
+
+:ET

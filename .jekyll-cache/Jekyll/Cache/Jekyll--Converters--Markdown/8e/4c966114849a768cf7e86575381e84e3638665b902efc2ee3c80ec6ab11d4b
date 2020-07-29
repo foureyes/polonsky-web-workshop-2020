@@ -1,0 +1,45 @@
+I"}<style>
+.container {
+	text-align: center; 
+}
+
+header {
+	font-size: 3em;
+	background-color: #eee;
+	margin: none; 
+	padding: none;
+	width: 100%;
+	display: block;
+	text-transform: uppercase;
+}
+</style>
+
+<header><h1>
+Polonsky / Brine Digital Humanities Internships</h1>
+</header>
+
+<div style="">
+
+  <h3 id="summer--2020">SUMMER 😎 2020</h3>
+
+  <h2 id="web-publishing-workshop">Web Publishing Workshop</h2>
+
+  <div style="text-align:left; width: 20em; margin: auto; margin-top: 1em; font-size:1.5em;">
+
+    <ol>
+      <li>🤝 <a href="slides/intro.html">Introduction</a></li>
+      <li>🤖 <a href="slides/web-basics.html">How the Web Works</a></li>
+      <li>🕸️<a href="slides/publishing.html">Publishing on the Web (<em>Deployment</em>)</a></li>
+      <li>✍️ <a href="slides/project-planning.html">Project Planning and Documentation</a></li>
+    </ol>
+
+  </div>
+
+</div>
+<!--
+
+
+
+-->
+
+:ET

@@ -1,0 +1,127 @@
+I"`<section class="intro-slide">
+  <h1 id="publishing-on-the-web">Publishing on the Web</h1>
+
+  <h3 id="polonsky--brine-001">Polonsky / Brine-001</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="publishing-on-the-web-topics">Publishing on the Web Topics</h2>
+
+  <p>We&#39;ll talk about three different ways to publish your content on the web:</p>
+
+  <ol>
+    <li class="fragment">As a <strong>static site</strong></li>
+    <li class="fragment">Through a <strong>Content Management System</strong> (CMS) or <em>web publishing platform</em></li>
+    <li class="fragment">Using speciality services</li>
+  </ol>
+
+</section>
+<section>
+  <h2 id="overview">Overview</h2>
+
+  <p>To make your content available on the web&#8230;</p>
+
+  <ul>
+    <li class="fragment">You&#39;ll need to put that content on a computer (a <em>server</em>) that can <em>talk HTTP</em></li>
+    <li class="fragment">Usually, this means a computer running specialized software for serving web content (this software is called a <strong>web server</strong> or an <strong>HTTP server</strong>)</li>
+    <li class="fragment">Also:
+      <ul>
+        <li class="fragment">(the computer should also be on the internet)</li>
+        <li class="fragment">(you may want a domain name)</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="your-computer-or-someone-elses">Your Computer or Someone Else&#39;s</h2>
+
+  <p><strong>That computer may be your own or someone else&#39;s computer!</strong> &#8594;</p>
+
+  <ul>
+    <li><strong>Self hosted</strong> or <strong>on premise</strong> &#8230;
+      <ul>
+        <li class="fragment">implies that the content is served on from a server that you <em>own</em>  from a location that you own or rent</li>
+        <li class="fragment">you maintain not just the content, but also the server and the server software</li>
+      </ul>
+    </li>
+    <li><strong>Hosted</strong> or <strong>cloud</strong> &#8230;
+      <ul>
+        <li class="fragment">implies that the content is served from <em>someone else&#39;s</em> server</li>
+        <li class="fragment">you are only responsible for the content, not the server or server software</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="question" id="prefer-using-hosted-or-cloud-options-why-">Prefer using hosted or cloud options (why 🤷?)</h2>
+</section>
+
+<section>
+  <h2 id="uploading-files-example">Uploading Files Example</h2>
+
+  <p><strong>Let&#39;s see what &quot;using someone else&#39;s computer&quot; to host web content may look like</strong> 👀⬆️ &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>demo</strong>: uploading files via ftp / sftp to a remote server
+      <ul>
+        <li class="fragment">(for example, hosting provided by your school)</li>
+      </ul>
+    </li>
+    <li class="fragment"><strong>demo</strong>: using a service that provides <em>static</em> file hosting
+      <ul>
+        <li class="fragment">(for example, GitHub Pages)</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <p>##</p>
+  <ul>
+    <li>static vs database driven</li>
+  </ul>
+
+</section>
+<section>
+  <h2 id="content-management-systems">Content Management Systems</h2>
+
+  <ul>
+    <li>hosted vs self hosted / on premise / &quot;local&quot;</li>
+    <li>popular: WordPress, Omeka</li>
+    <li>others: Readymag, Squarespace, Wix</li>
+    <li>CMS/plus: Joomla, Drupal</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="static-vs-dynamic">Static vs Dynamic</h2>
+
+</section>
+<section>
+  <h2 id="specialized-services">Specialized Services:</h2>
+
+  <ul>
+    <li>Story Maps</li>
+    <li>AirTable</li>
+    <li>Online Counterpart of Desktop Tools (Tableau Online, ArcGIS Online)</li>
+    <li>Other: https://observablehq.com/</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="for-small-teams-one-person">For Small Teams (One Person)</h2>
+
+  <ul>
+    <li>less to maintain is better</li>
+    <li>though less flexibility</li>
+  </ul>
+
+</section>
+:ET

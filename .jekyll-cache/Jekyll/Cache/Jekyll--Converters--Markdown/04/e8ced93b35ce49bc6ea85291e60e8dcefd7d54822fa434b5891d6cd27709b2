@@ -1,0 +1,567 @@
+I"Ò_<section class="intro-slide">
+  <h1 id="a-high-level-overview-of-how-the-web-works">A High-Level Overview of How the Web Works</h1>
+
+  <h3 id="polonsky--brine-digital-humanities-internships">Polonsky / Brine Digital Humanities Internships</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="topics">Topics</h2>
+
+  <p><strong>In this set of slides, we&#39;ll cover:</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">The Internet vs the Web</li>
+    <li class="fragment">Client - Server</li>
+    <li class="fragment">Resources on the Web: HTML, CSS, JavaScript, Images</li>
+    <li class="fragment"><strong>Demo</strong>: networking tab, view source</li>
+    <li class="fragment">Why it&#39;s hard to save a web page for offline viewing</li>
+  </ul>
+
+  <p class="fragment"><strong>Resources</strong></p>
+
+  <ul>
+    <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web">Mozilla Developer Network - Getting started with the Web</a></li>
+  </ul>
+</section>
+
+<section>
+
+  <h2 class="question" id="whats-the-difference-between-the-internet-and-the-web-">What&#39;s the difference between the internet and the web? &#8594;</h2>
+
+  <div class="img">
+    <p><img src="../resources/images/internet.jpg" alt="keyboard as surfboard" /></p>
+  </div>
+
+</section>
+
+<section>
+  <h2 id="the-internet">The Internet</h2>
+
+  <p><strong>A global system of interconnected computer networks</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">a <em>network of networks</em></li>
+    <li class="fragment"><strong>TCP/IP</strong> - protocol that dictates how data is:
+      <ul>
+        <li class="fragment">addressed</li>
+        <li class="fragment"><em>packetized</em></li>
+        <li class="fragment">transmitted</li>
+        <li class="fragment">routed</li>
+        <li class="fragment">received</li>
+      </ul>
+    </li>
+    <li class="fragment">(we&#39;ll talk about protocols in a bit)</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="the-world-wide-web">The World Wide Web</h2>
+
+  <p><strong>A collection of resources&#8230;</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">such as HTML documents, images, etc.</li>
+    <li class="fragment">each retrievable by an identifier (URL)</li>
+    <li class="fragment">linked together via <em>hypertext</em> and <em>hyperlinks</em></li>
+    <li class="fragment"><strong>HTTP</strong> is the protocol used by the web to specify
+      <ul>
+        <li class="fragment">how resources should be requested over a network</li>
+        <li class="fragment">how a request should be responded to</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="other-services">Other Services</h2>
+
+  <p><strong>The web</strong> is just one of many services available on the internet&#8230; <strong>what are some others services and protocols on the internet?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">email (SMTP)</li>
+    <li class="fragment">chat (XMPP, OSCAR, IRC)</li>
+    <li class="fragment">file transfer (FTP)</li>
+    <li class="fragment">voice (SIP, Skype protocol)</li>
+    <li class="fragment">these are all examples of <strong>network protocols</strong> -  ways of communicating over a network</li>
+  </ul>
+</section>
+<section>
+  <h2 id="protocols">Protocols</h2>
+
+  <p>Hm. All this talk about protocols but &#8230; <strong>what <em>exactly</em> is a protocol?</strong> &#8594;</p>
+
+  <p class="fragment">It&#39;s a bunch of rules and conventions for communication. Really. That&#39;s it.</p>
+
+  <p class="fragment">For computers and communication between them, these rules may define:</p>
+
+  <ul class="fragment">
+    <li>the format for exchanging messages</li>
+    <li>a meaning (semantics) and syntax for these messages</li>
+    <li>the process for synchronizing the communication</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="a-protocol-example">A Protocol Example</h2>
+
+  <p>Eloquent JavaSccript describes a <strong>simple chat protocol</strong>. For two computers to communicate with this protocol:</p>
+
+  <ol>
+    <li>one computer sends bits that represent the text, &#39;<strong>CHAT?</strong>&#39;, to another computer</li>
+    <li>the other computer responds with &#39;<strong>OK!</strong>&#39; to show that it accepts and understands the protocol</li>
+    <li>from there, they can:
+      <ul>
+        <li>proceed to send each other strings of text</li>
+        <li>read the text sent by the other from the network</li>
+        <li>display the received text</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+<section>
+  <h2 id="another-example">Another Example</h2>
+
+  <p>Here&#39;s what an email interaction may look like (SMTP - Simple Mail Transfer Protocol):</p>
+
+  <pre><code data-trim="" contenteditable="">
+Client: HELO client.mydomain.com
+Server: 250 Hello client.mydomain.com
+Client: MAIL FROM:&lt;cooldude@superawesomemail.com&gt;
+Server: 250 OK
+Client: RCPT TO:&lt;admin@pizzaforyou.com&gt;
+Server: 250 OK
+</code></pre>
+
+  <pre><code data-trim="" contenteditable="">
+Client: DATA
+Server: 354 Send message content; end with CRLF.CRLF
+Client: (email headers and body)
+Client: .
+Server: 250 OK, message accepted for delivery: queued as (id)
+Client: QUIT
+Server: 221 Bye
+</code></pre>
+</section>
+
+<section>
+  <h2 id="a-slightly-closer-look-at-tcpip">A Slightly Closer Look at TCP/IP</h2>
+
+  <p>The previous slides described <strong>Application</strong> <em>protocols</em> &#8230; (chat, mail, <em>specific</em> applications). <strong>However, these protocols don&#39;t define how data/messages <em>actually</em> gets from one computer to another in a networked environment</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">how does a message get translated from (for example) plain text to electronic signals&#8230; and how is sent over the Internet, and translated back to plain text?</li>
+    <li class="fragment">welp! there are other protocols - <strong>a <em>stack</em> of protocols</strong> that describe how this communication works</li>
+    <li class="fragment">this stack is of protocols is often referred to as the TCP/IP stack
+      <ul>
+        <li class="fragment">(mainly because TCP and IP are two of the major protocols involved)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="tcpip-continued">TCP/IP Continued</h2>
+
+  <p>The <strong>TCP/IP stack</strong> <strong>consists of 4 layers</strong>:</p>
+
+  <ol>
+    <li class="fragment"><strong>Application Layer</strong> - application level protocols such as HTTP, SMTP, etc.</li>
+    <li class="fragment"><strong>Transport Layer</strong> - protocols involved in communication (connection establishment, flow-control) between <strong>applications</strong> (either on the same host/computer or different host), such as TCP or UDP</li>
+    <li class="fragment"><strong>Network Layer</strong> - the protocol responsible for routing <strong>packets of data</strong> across network boundaries - directs data to a specific <strong>computer / host</strong>, which is IP or Internet Protocol</li>
+    <li class="fragment"><strong>Physical (hardware) Layer / Link Layer</strong> - converts data to network signals and back (wi-fi, ethernet)</li>
+  </ol>
+
+</section>
+
+<section>
+  <h2 id="sending-a-message-over-the-internet">Sending a Message Over the Internet</h2>
+
+  <p>Check out the diagram from this <a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">whitepaper</a> on how the internet works (!). The whitepaper describes <strong>sending data from one <em>host</em> (computer) to another through the internet</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">messages start at the top of the stack and work <strong>downward</strong></li>
+    <li class="fragment">each layer that the message passes through may break the message up into smaller chunks of more manageable data called <strong>packets</strong></li>
+    <li class="fragment">packets go through the Application Layer and continue to the Transport Layer where each packet is assigned a <strong>port number</strong> (loosely speaking a number that specifies which program on the destination computer needs to receive the message)</li>
+    <li class="fragment">packets then proceed to the Network Layer, where each packet receives its destination <strong>IP address</strong> (number that identifies a computer on the network)</li>
+  </ol>
+
+</section>
+
+<section>
+  <h2 id="sending-a-message-over-the-internet-continued">Sending a Message Over the Internet Continued</h2>
+
+  <p><strong>Starting from the hardware layer of <a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper_files/ruswp_diag2.gif">this diagram</a>, our message continues its journey!</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">with a port number and an IP address, the <strong>hardware layer turns packets of data into electronic signals and transmits them</strong></li>
+    <li class="fragment">these packets eventually arrive at the other host (often going through intermediary <em>routers</em> in the process), and work their way back up the stack</li>
+    <li class="fragment">as the packets go upwards through the stack, all routing data that the sending computer&#39;s stack added (such as IP address and port number) is stripped from the packets</li>
+    <li class="fragment">when the data reaches the top of the stack, the <strong>packets have been re-assembled into their original form</strong></li>
+  </ol>
+
+  <p class="fragment"><br />
+Again, all of this comes from this <a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">whitepaper</a>. Although it&#39;s nearly a couple of decades old, the networking aspects are still very relevant.</p>
+
+</section>
+
+<section>
+  <h2 id="tcpip-is-the-underlying-protocol-of-the-internet">TCP/IP is the Underlying Protocol of the Internet</h2>
+
+  <ul>
+    <li>don&#39;t worry, that&#39;s about as in-depth as we&#39;ll get on TCP/IP</li>
+    <li>however, just know that <strong>other <em>application</em> layer protocols are built on top of TCP/IP</strong></li>
+    <li><strong>we&#39;re mostly interested in the web, and makin&#39; web pages</strong> &#8230;
+      <ul>
+        <li>so we should take a look at <strong>application layer protocols</strong></li>
+        <li>specifically <strong>HTTP</strong></li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="the-web">The Web</h2>
+
+  <p><strong>What was our definition of the web again?</strong> &#8594;</p>
+
+  <p class="fragment">A collection of interconnected documents (web pages) and other resources (images), retrievable by url and connected by <em>hyperlinks</em>.</p>
+
+</section>
+
+<section>
+  <h2 id="it-all-starts-with-a-url">It All Starts With a URL</h2>
+
+  <p>Each document or resource on the web is retrievable by a name, a <strong>URL</strong> (Universal Resource Locator). <strong>What are the parts to a URL?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>scheme/protocol</strong> - http (er, browsers accept schema-less)</li>
+    <li class="fragment"><strong>domain or actual ip address</strong> - pizzaforyou.com</li>
+    <li class="fragment"><strong>port</strong> (optional) - 80 (default if http)</li>
+    <li class="fragment"><strong>path</strong> - /search</li>
+    <li class="fragment"><strong>query_string</strong> (optional) - ?type=vegan</li>
+    <li class="fragment"><strong>fragment_id</strong> (optional) - #topresult</li>
+  </ul>
+
+  <p class="fragment"><br />
+<code>scheme://domain:port/path?query_string#fragment_id</code></p>
+
+  <p class="fragment"><code>http://pizzaforyou.com:80/search?type=vegan#top_result</code></p>
+</section>
+
+<section>
+  <h2 id="domains-and-ip-addresses">Domains and IP Addresses</h2>
+
+  <p><strong>Each machine connected to the Internet gets a unique IP address.</strong></p>
+
+  <p>We can map domains to IP addresses through DNS (Domain Name System).</p>
+
+  <ul>
+    <li>both IP Addresses and domains are acceptable in a URL.</li>
+    <li>on OSX, Linux (and windows), there&#39;s a file that allows you to map names to ip addresses (before using dns)</li>
+    <li>typically <code>/etc/hosts</code> or <code>hosts.txt</code></li>
+    <li><code>localhost</code> maps to <code>127.0.0.1</code>&#8230; which essentially is <em>your</em> computer</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="http">HTTP</h2>
+
+  <p>To retrieve documents on the web, we use <strong>HTTP</strong> (Hyper Text Transfer Protocol). The computer/application asking for the document is the <strong>client</strong> or <em>user-agent</em>, and the computer responding to requests for documents is the <strong>server</strong>.</p>
+
+  <ul>
+    <li>generally, the <strong>server</strong> is going to be some sort of web server, like Apache or Nginx</li>
+    <li>the <strong>client</strong> (or the <strong>user-agent</strong>) is usuall &#8594; <span class="fragment">some sort of browser, like Chrome or Safari</span> (there are clients other than browsers too)</li>
+  </ul>
+
+  <p class="fragment"><br />
+<strong>HTTP is a request-response protocol, a very basic text-based (at least for version 1.1) communication method between computers:</strong></p>
+
+  <ul>
+    <li>the client sends a request for some data</li>
+    <li>the second computer responds to the request</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="http-continued">HTTP Continued</h2>
+
+  <p>The interaction between your browser and a web server goes something like this:</p>
+
+  <ol>
+    <li class="fragment">the browser attempts to connect to the address of the server</li>
+    <li class="fragment">if the server is listening and <em>reachable</em>, a TCP connection is made between the server and the client on port 80 (the default port for HTTP traffic)</li>
+    <li class="fragment">the browser sends a request message</li>
+    <li class="fragment">on the same connection, the web server gives back a response message</li>
+  </ol>
+</section>
+
+<section>
+  <h2 id="a-request-message">A Request Message</h2>
+
+  <p>A request consists of:</p>
+
+  <ul>
+    <li class="fragment"><strong>a request line &#8230;</strong>  which includes a request method and a path - <code>GET /teaching HTTP/1.1</code></li>
+    <li class="fragment"><strong>request headers</strong> <code>Host: jvers.com</code>, <code>User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 </code></li>
+    <li class="fragment"><strong>an empty line</strong></li>
+    <li class="fragment"><strong>an optional body</strong></li>
+    <li class="fragment">note that a new line is represented by a <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2">carriage return, line feed</a>: <strong>\r\n</strong></li>
+  </ul>
+
+  <p class="fragment"><br />
+<a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields">Here&#39;s a list of request header fields</a>.</p>
+</section>
+
+<section>
+  <h2 id="request-methods">Request Methods</h2>
+
+  <p>Here&#39;s a list of available <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods">request methods</a>. A <strong>request method</strong> (sometimes called a <em>verb</em>) tells the server what action perform on the identified resource. <strong>A couple of common ones are &#8230;</strong> &#8594;</p>
+
+  <ul class="fragment">
+    <li><strong>GET</strong> - retrieve specified resource/data without any other effect&#8230; (reading data)
+      <ul>
+        <li>data is passed through query string parameters / url</li>
+      </ul>
+    </li>
+    <li><strong>POST</strong> - requests that the server accept the data in the request for storage (creating data)
+      <ul>
+        <li>data is passed in body of request</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="a-response-message">A Response Message</h2>
+
+  <p>A response consists of:</p>
+
+  <ul>
+    <li class="fragment"><strong>a status-line &#8230;</strong> which includes a status code and reason - <code>HTTP/1.1 200 OK</code></li>
+    <li class="fragment"><strong>response header fields</strong> - <code>Content-Type: text/html</code></li>
+    <li class="fragment"><strong>an empty line</strong></li>
+    <li class="fragment"><strong>an optional message body</strong> - usually an HTML document!</li>
+    <li class="fragment">note that a new line is represented by a <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2">carriage return, line feed</a>: <strong>\r\n</strong></li>
+  </ul>
+
+  <p class="fragment"><br />
+<a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields">And of course, a list of response header fields</a>.</p>
+</section>
+
+<section>
+  <h2 id="status-codes">Status Codes</h2>
+
+  <p>The status code that a server responds with is a numeric code that indicates the result of the request. <strong>Some typical status codes are</strong> &#8594;</p>
+
+  <ul class="fragment">
+    <li><strong>200 OK</strong> - request was successful!</li>
+    <li><strong>404 Not Found</strong> - resource was not found, but may be available again in the future</li>
+    <li><strong>500 Server Error</strong> - generic server error</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="status-codes-continued">Status Codes Continued</h2>
+
+  <p><strong>There are 5 different classes of status codes</strong> &#8594;</p>
+
+  <ul class="fragment">
+    <li><strong>1xx</strong> - <strong>Informational</strong>, request received</li>
+    <li><strong>2xx</strong> - <strong>Success</strong>, request was received, understood and accepted</li>
+    <li><strong>3xx</strong> - <strong>Redirection</strong>, additional action must be taken to complete request</li>
+    <li><strong>4xx</strong> - <strong>Client Error</strong></li>
+    <li><strong>5xx</strong> - <strong>Server Error</strong></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="a-sample-interaction">A Sample Interaction</h2>
+
+  <p>A request (again, using \r\n as newlines):</p>
+
+  <pre><code data-trim="" contenteditable="">
+GET /teaching/ HTTP/1.1
+Host: jvers.com
+Connection: keep-alive
+Cache-Control: max-age=0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
+Accept-Language: en-US,en;q=0.8
+</code></pre>
+</section>
+
+<section>
+  <h2 id="a-sample-interaction-continued">A Sample Interaction Continued</h2>
+
+  <p>A response (again, using \r\n as newlines):</p>
+
+  <pre><code data-trim="" contenteditable="">
+HTTP/1.1 200 OK
+Date: Thu, 18 Feb 2016 15:23:39 GMT
+Server: Apache/2.2.15 (Red Hat)
+Accept-Ranges: bytes
+Content-Length: 163
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: STATICSERVERID=s3; path=/
+Cache-control: private
+
+<h2>Check out my fancy header!</h2>
+</code></pre>
+</section>
+
+<section>
+  <h1 id="some-tooling-in-increasing-order-of-ease-of-use">Some Tooling (in increasing order of ease-of-use)</h1>
+</section>
+
+<section>
+  <h2 id="netcat">netcat</h2>
+
+  <p><strong>nc</strong> is a commandline utility for connection and communication through TCP or UDP. It can take a host and port as arguments:</p>
+
+  <pre><code data-trim="" contenteditable="">
+nc cs.nyu.edu 80
+</code></pre>
+
+  <p>Then&#8230; start typing! Let&#39;s try to retrieve the root document (<code>/</code>).</p>
+
+  <pre><code data-trim="" contenteditable="">
+GET / HTTP/1.1
+Host: cs.nyu.edu
+</code></pre>
+
+  <p>Or&#8230; the document <code>/home/index.html</code></p>
+
+  <pre><code data-trim="" contenteditable="">
+GET /home/index.html HTTP/1.1
+Host: cs.nyu.edu
+</code></pre>
+</section>
+
+<section>
+  <h2 id="curl">curl</h2>
+
+  <p><strong>curl</strong> is a command line tool to transfer data to and from a server.</p>
+
+  <ul>
+    <li>the -I (uppercase I) flag retrieves headers only</li>
+    <li>the -i (lowercase i) flag retrieves headers and body</li>
+  </ul>
+
+  <p><br /></p>
+  <pre><code data-trim="" contenteditable="">
+# get the response headers for google.com only
+curl -I google.com
+
+# get the response headers for www.google.com only
+curl -I www.google.com
+
+# get the body only
+curl www.google.com
+
+# get the entire response (headers and body)
+curl -i www.google.com
+</code></pre>
+
+  <p>Note that the above examples all use <strong>GET</strong> as the http method</p>
+</section>
+
+<section>
+  <h2 id="curl-and-post">curl and POST</h2>
+
+  <p><code class="language-plaintext highlighter-rouge">curl</code> can also be used to send a request body along with a <strong>POST</strong> request. To do this &#8594;</p>
+
+  <ol>
+    <li class="fragment">use the <code class="language-plaintext highlighter-rouge">--data</code> or <code class="language-plaintext highlighter-rouge">-d</code> flag sends the data after the option as an HTTP POST
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">curl -d username=foo</code></li>
+        <li>multiple <code class="language-plaintext highlighter-rouge">-d</code> options are merged: <code class="language-plaintext highlighter-rouge">curl -d username=foo -d password=bar</code> results in username=foo&amp;password=bar</li>
+      </ul>
+    </li>
+    <li class="fragment">use the <code class="language-plaintext highlighter-rouge">-F</code> flag to emulate sending form data (including sending files!)
+      <ul>
+        <li>causes curl to POST data using the <code class="language-plaintext highlighter-rouge">Content-Type multipart/form-data</code> header</li>
+        <li>(emulates pressing the submit button in a form)</li>
+      </ul>
+    </li>
+  </ol>
+
+</section>
+<section>
+  <h2 id="a-brief-note-about-request-and-response-headers">A Brief Note About Request and Response Headers</h2>
+
+  <p>We saw some <em>actual</em> requests / responses. It looked like there were some important headers set! &#8594;</p>
+
+  <p><strong>Request</strong></p>
+
+  <ul>
+    <li class="fragment"><code class="language-plaintext highlighter-rouge">Host:</code> the hostname of the server that is being connected to (sometimes a server may use this string to determine what to respond with!)</li>
+  </ul>
+
+  <p><br /></p>
+
+  <p><strong>Response</strong></p>
+
+  <ul>
+    <li class="fragment"><code class="language-plaintext highlighter-rouge">Content-Type:</code> &#8230; the type of resource that the server is responding with (text/html, text/css, image/jpeg, etc&#8230;.<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">mime types</a>)</li>
+    <li class="fragment"><code class="language-plaintext highlighter-rouge">Location:</code> &#8230; the url to redirect to for 3xx status codes</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="chrome">Chrome</h2>
+
+  <p><strong>Chrome comes with great tools for development!</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">go to View &#8594; Developer &#8594; Developer Tools</li>
+    <li class="fragment">click on Network</li>
+    <li class="fragment">go to the page</li>
+    <li class="fragment">watch the requests fly by!</li>
+    <li class="fragment">(why so many!?)</li>
+  </ol>
+</section>
+
+<section>
+  <h1 id="lets-try-using-nc-curl-and-chrome-to-get-some-status-codes">Let&#39;s try using nc, curl and Chrome to get some status codes!</h1>
+</section>
+<section>
+  <h2 id="clients-and-servers">Clients and Servers</h2>
+
+  <p><strong>So&#8230; web development can mean a lot of things. Broadly speaking:</strong> &#8594;</p>
+
+  <ul>
+    <li>you can be developing for the client (writing HTML, client side JavaScript applications)</li>
+    <li>&#8230;or for the server (server-side code responsible for dealing with requests / responses, manipulating and retrieving data, etc.)</li>
+  </ul>
+
+  <p><br />
+We&#39;ll be dealing with <strong>server-side</strong> development first&#8230;</p>
+</section>
+
+<section>
+  <h2 id="http2">HTTP/2</h2>
+
+  <p><strong>Note that another version of HTTP, HTTP/2 is <em>actually</em> out and being used!</strong> HTTP/2 &#8594;</p>
+
+  <ul>
+    <li>HTTP methods, status codes and semantics remain the same!</li>
+    <li>however, the focus of the protocol is improved performance:
+      <ul>
+        <li>uses binary format rather than plain text</li>
+        <li>parallel requests can be made over the same connection</li>
+        <li>server can push required resources to client even before client makes requests!</li>
+        <li>compresses headers</li>
+      </ul>
+    </li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP">check out the mdn page for the evolution of http</a></li>
+    <li>for now, we won&#39;t be dealing with HTTP/2 as the semantics are essentially the same</li>
+  </ul>
+</section>
+:ET

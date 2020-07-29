@@ -1,0 +1,109 @@
+I">
+<section class="intro-slide">
+  <h1 id="publishing-on-the-web">Publishing on the Web</h1>
+
+  <h3 id="polonsky--brine-001">Polonsky / Brine-001</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="publishing-on-the-web-topics">Publishing on the Web Topics</h2>
+
+  <ol>
+    <li class="fragment">Overview</li>
+    <li class="fragment">Static Sites</li>
+    <li class="fragment">Content Management Systems</li>
+    <li class="fragment">Speciality Services</li>
+  </ol>
+
+</section>
+<section>
+  <h2 id="overview">Overview</h2>
+
+  <p><strong>What do you need so that your content can be accessed by clients?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">You&#39;ll need to put that content on a computer (a <em>server</em>) that can send back response.</li>
+    <li class="fragment">Usually, this means a computer running specialized software for serving web content (this software is called a <strong>web server</strong> or an <strong>http server</strong>)</li>
+    <li class="fragment">Also:
+      <ul>
+        <li class="fragment">(the computer should also be on the internet)</li>
+        <li class="fragment">(you may want a domain name)</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="your-computer-or-someone-elses">Your Computer or Someone Else&#39;s</h2>
+
+  <ul>
+    <li>hosted vs self hosted / on premise</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="static-sites">Static Sites</h2>
+
+  <ul>
+    <li><em>classic</em> hosting (NYU Libraries web hosting)</li>
+    <li>services (GitHub Pages, Netlify, etc.)</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="static-sites-demo">Static Sites Demo</h2>
+
+  <ul>
+    <li class="fragment">uploading</li>
+  </ul>
+
+</section>
+
+<section>
+  <p>##</p>
+  <ul>
+    <li>static vs database driven</li>
+  </ul>
+
+</section>
+<section>
+  <h2 id="content-management-systems">Content Management Systems</h2>
+
+  <ul>
+    <li>hosted vs self hosted / on premise / &quot;local&quot;</li>
+    <li>popular: WordPress, Omeka</li>
+    <li>others: Readymag, Squarespace, Wix</li>
+    <li>CMS/plus: Joomla, Drupal</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="static-vs-dynamic">Static vs Dynamic</h2>
+
+</section>
+<section>
+  <h2 id="specialized-services">Specialized Services:</h2>
+
+  <ul>
+    <li>Story Maps</li>
+    <li>AirTable</li>
+    <li>Online Counterpart of Desktop Tools (Tableau Online, ArcGIS Online)</li>
+    <li>Other: https://observablehq.com/</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="for-small-teams-one-person">For Small Teams (One Person)</h2>
+
+  <ul>
+    <li>less to maintain is better</li>
+    <li>though less flexibility</li>
+  </ul>
+
+</section>
+:ET

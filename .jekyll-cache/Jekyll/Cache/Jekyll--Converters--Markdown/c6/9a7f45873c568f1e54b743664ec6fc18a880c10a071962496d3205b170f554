@@ -1,0 +1,53 @@
+I"ã<section class="intro-slide">
+  <h1 id="publishing-on-the-web">Publishing on the Web</h1>
+
+  <h3 id="polonsky--brine-001">Polonsky / Brine-001</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="publishing-on-the-web-topics">Publishing on the Web Topics</h2>
+
+  <ol>
+    <li>Static Sites</li>
+    <li>Content Management Systems</li>
+    <li>Niche Services:</li>
+  </ol>
+
+</section>
+<ul>
+  <li>Static Sites
+    <ul>
+      <li><em>classic</em> hosting (NYU Libraries web hosting)</li>
+      <li>services (GitHub Pages, Netlify, etc.)</li>
+    </ul>
+  </li>
+  <li>Content Management Systems
+    <ul>
+      <li>hosted vs self hosted / on premise / &quot;local&quot;</li>
+      <li>popular: WordPress, Omeka</li>
+      <li>others: Readymag, Squarespace, Wix</li>
+      <li>CMS/plus: Joomla, Drupal</li>
+    </ul>
+  </li>
+  <li>Niche Services:
+    <ul>
+      <li>Story Maps</li>
+      <li>AirTable</li>
+      <li>Online Counterpart of Desktop Tools (Tableau Online, ArcGIS Online)</li>
+      <li>Other: https://observablehq.com/</li>
+    </ul>
+  </li>
+</ul>
+
+<section>
+  <h2 id="for-small-teams-one-person">For Small Teams (One Person)</h2>
+
+  <ul>
+    <li>less to maintain is better</li>
+    <li>though less flexibility</li>
+  </ul>
+
+</section>
+:ET

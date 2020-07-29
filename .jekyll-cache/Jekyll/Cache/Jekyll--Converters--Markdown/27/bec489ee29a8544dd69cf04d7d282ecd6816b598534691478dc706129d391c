@@ -1,0 +1,216 @@
+I" <section class="intro-slide">
+  <h1 id="publishing-on-the-web">Publishing on the Web</h1>
+
+  <h3 id="polonsky--brine-001">Polonsky / Brine-001</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="publishing-on-the-web-topics">Publishing on the Web Topics</h2>
+
+  <p>We&#39;ll talk about three different ways to publish your content on the web:</p>
+
+  <ol>
+    <li class="fragment">As a <strong>static site</strong></li>
+    <li class="fragment">Through a <strong>Content Management System</strong> (CMS) or <em>web publishing platform</em></li>
+    <li class="fragment">Using speciality services</li>
+  </ol>
+
+</section>
+<section>
+  <h2 id="overview">Overview</h2>
+
+  <p>To make your content available on the web&#8230;</p>
+
+  <ul>
+    <li class="fragment">You&#39;ll need to put that content on a computer (a <em>server</em>) that can <em>talk HTTP</em></li>
+    <li class="fragment">Usually, this means a computer running specialized software for serving web content (this software is called a <strong>web server</strong> or an <strong>HTTP server</strong>)</li>
+    <li class="fragment">Also:
+      <ul>
+        <li class="fragment">(the computer should also be on the internet)</li>
+        <li class="fragment">(you may want a domain name)</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="your-computer-or-someone-elses">Your Computer or Someone Else&#39;s</h2>
+
+  <p><strong>That computer may be your own or someone else&#39;s computer!</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>Self hosted</strong> or <strong>on premise</strong> 🏠&#8230;
+      <ul>
+        <li class="fragment">implies that the content is served on from a server that you <em>own</em>  from a location that you own or rent (or even a share of a server&#39;s resources)</li>
+        <li class="fragment">in addition to maintaining the content, you also maintain the server software (and possibly the server itself)</li>
+      </ul>
+    </li>
+    <li class="fragment"><strong>Hosted</strong> or <strong>cloud</strong> ☁️&#8230;
+      <ul>
+        <li class="fragment">implies that the content is served from <em>someone else&#39;s</em> server</li>
+        <li class="fragment">you are only responsible for the content, not the server or server software</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="question" id="prefer-using-hosted-or-cloud-options-why-">Prefer using hosted or cloud options (why 🤷?)</h2>
+</section>
+
+<section>
+  <h2 id="uploading-files-example">Uploading Files Example</h2>
+
+  <p><strong>Let&#39;s see what &quot;using someone else&#39;s computer&quot; to host web content (as simple HTML files) may look like</strong> 👀⬆️ &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>demo</strong>: uploading files via ftp / sftp to a remote server
+      <ul>
+        <li class="fragment">(for example, hosting provided by your school)</li>
+      </ul>
+    </li>
+    <li class="fragment"><strong>demo</strong>: using a service that provides <em>static</em> file hosting
+      <ul>
+        <li class="fragment">(for example, GitHub Pages)</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="static-sites">Static Sites</h2>
+
+  <p>The previous demonstrations were examples of <strong>static sites</strong>. &#8594;</p>
+
+  <ul>
+    <li class="fragment">the content delivered to the user is the same as the file stored on the server</li>
+    <li class="fragment">these files are usually HTML, CSS, JavaScript and images</li>
+    <li class="fragment">this implies that content <em>does not change</em> (it&#39;s <em>likely</em> the same content regardless of context - such as user, time, etc.)</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 class="question" id="what-are-some-examples-of-sites-that-are-likely-not-static-why-do-you-think-theyre-not-static">What are some examples of sites that are likely NOT static? Why do you think they&#39;re not static?</h2>
+</section>
+
+<section>
+  <h2 id="dynamic--database-driven">Dynamic / Database Driven</h2>
+
+  <p>Sites where content is generated on the fly (based on user, data, time, etc.) are called <strong>dynamic sites</strong>. &#8594;</p>
+
+  <ul>
+    <li class="fragment">these sites assemble and generate HTML as needed</li>
+    <li class="fragment">typically, content is drawn from a database and injected into an HTML template</li>
+    <li class="fragment">consequently, your content is no longer file based&#8230;</li>
+    <li class="fragment">instead, you need some method of inserting and editing your content in a database</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="wait-how">Wait, How❓</h2>
+
+  <p><strong>A database driven website delivers content by</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">accepting a request from a browser</li>
+    <li class="fragment">reading or modifying data from a database</li>
+    <li class="fragment">using that data to create HTML markup and content</li>
+    <li class="fragment">sending back the resulting document</li>
+  </ol>
+
+</section>
+
+<section>
+  <h2 class="question" id="how-do-we-get-data-into-the-database-are-we-writing-sql-now">How do we get data into the database? Are we writing SQL now?</h2>
+
+</section>
+<section>
+  <h2 id="content-management-systems">Content Management Systems</h2>
+
+  <p><strong>Rather than dealing with flat HTML files, Content Management Systems provide a graphical user interface to administering your site and its content</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">Many Content Management Systems cater to a specific kind of content</li>
+    <li class="fragment">For example, <a href="https://omeka.org/">Omeka</a> is set up specifically for collections management</li>
+    <li class="fragment">But some Content Management Systems facilities for more generic content</li>
+    <li class="fragment">For example, <a href="https://wordpress.org/">WordPress</a> was originally a blogging platform (a post is the primary building block), but its features allow for any kind of web content</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="additional-features">Additional Features</h2>
+
+  <p><strong>Content Management Systems may also provide the following features</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>plugin</strong> system</li>
+    <li class="fragment"><strong>data model</strong> extensibility</li>
+    <li class="fragment">themes</li>
+    <li class="fragment"><strong>WYSIWG editor</strong></li>
+    <li class="fragment">administrative <strong>user management</strong></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="other-factors">Other Factors</h2>
+
+  <p><strong>When choosing a CMS, you may also consider some non-techical attributes, suchs as</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">ease-of-use</li>
+    <li class="fragment">community / userbase</li>
+    <li class="fragment">development activity</li>
+    <li class="fragment">documentation</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 class="question" id="what-are-some-content-management-systems-that-youve-heard-of">What are some Content Management Systems that you&#39;ve heard of?</h2>
+
+</section>
+
+<section>
+  <h2 id="cms">CMS</h2>
+
+  <ul>
+    <li><a href="https://wordpress.org/">WordPress</a> - blogging, but a lot more!</li>
+    <li><a href="https://omeka.org/">Omeka</a> - digital collections; plugin system allows for mapping</li>
+    <li><a href="https://www.squarespace.com/">Squarespace</a> and  <a href="https://www.wix.com/">Wix</a> - both generic website builders for creating an <em>online presence</em></li>
+    <li><a href="https://www.joomla.org/">Joomla</a> and <a href="https://www.drupal.org/">Drupal</a> - generic CMS</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="static-vs-dynamic">Static vs Dynamic</h2>
+
+</section>
+
+<section>
+  <h2 id="specialized-services">Specialized Services:</h2>
+
+  <ul>
+    <li>Story Maps</li>
+    <li>AirTable</li>
+    <li>Online Counterpart of Desktop Tools (Tableau Online, ArcGIS Online)</li>
+    <li>Other: https://observablehq.com/</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="for-small-teams-one-person">For Small Teams (One Person)</h2>
+
+  <ul>
+    <li>less to maintain is better</li>
+    <li>though less flexibility</li>
+  </ul>
+
+</section>
+:ET

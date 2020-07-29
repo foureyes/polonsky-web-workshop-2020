@@ -1,0 +1,548 @@
+Delivered-To: joeversoza@gmail.com
+Received: by 2002:adf:cd86:0:0:0:0:0 with SMTP id q6csp1501940wrj;
+        Wed, 29 Jul 2020 06:42:42 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzg+X1Vxi/nTqhY45KUTDQ0F847/3ZQYWifJKeofn2dYyZ2stutr0n0y34FStZX9nIAIZIs
+X-Received: by 2002:a17:90b:138a:: with SMTP id hr10mr9456872pjb.161.1596030162100;
+        Wed, 29 Jul 2020 06:42:42 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1596030162; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=xsapDD6Waj7C2sn6oPdma+CXYwMhvp0dsn79SczH36iQQsezBmKJDqzdB2/T4LhV0T
+         2ZzfuC8RbMWZsn+NPD6y/0gc+tHcH3osqg4hKK1hIfE+Hx3yYHYnh3xa5cQ9U9+a0YGW
+         XPAiyB2+mZc/+QUo6L/YYhyHghMyVYQ5QcA2fcL1r7bo0TJ1Gv22v4s+MA55xEvlBuJI
+         8IsSioo1mqJuULDwap0SEUM17eVkGVukJKIEdI+SIDWAWO98G+QkaGO5oYYwXCEJj08B
+         4dE86cy7nUpX0thyc92cuCFlPmhjUfWVpx8B6BSmd2yusGix1oOMaC3uRga+EVxv/WOJ
+         A/Xg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:date:to:message-id:reply-to:subject:from
+         :dkim-signature:dkim-signature:delivered-to;
+        bh=7AGYr6p+EBc/IexAeGUQKAXDH4RB9cFAA2RBs+3R5qw=;
+        b=Knp/Vuwy3eY7KcQBisJa7sMjQzvJ9Whvb0MwrDjqNuu0cQj78VDq3rnNpKW6vytcnO
+         RTSS+uu1zhSBFuIdBWO3+6JxjoRGs7bQFM2cT7PIxSbJXnG9YzqN1fYpIqACTkkJgRdH
+         s2q01kBr239LAy5VFhm9pBOBN09i28YpRKeBvND6k8vYwOPLymOBDDwnnRmNDGke+irS
+         TQuHAmXJsgXeXAO8boWrRRuzt3TL7fsY5VHWHmdOdBcNA2VkvKXCqxs6FtuGgqbu6CFg
+         f7dA7tdcsNq6H0W/eTf3fUg9fs4qMsSQefQmD+5TiaV4p5D9FR3hj5sEmQTkDxugY9n5
+         Z6Iw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=neutral (body hash did not verify) header.i=@netlify.com header.s=mandrill header.b="ag1oO/bT";
+       dkim=neutral (body hash did not verify) header.i=@mandrillapp.com header.s=mandrill header.b="M/YLQlMB";
+       arc=pass (i=1 spf=pass spfdomain=mandrillapp.com);
+       spf=pass (google.com: domain of jjv222+caf_=joeversoza=gmail.com@nyu.edu designates 148.163.150.240 as permitted sender) smtp.mailfrom="jjv222+caf_=joeversoza=gmail.com@nyu.edu";
+       dmarc=fail (p=REJECT sp=REJECT dis=QUARANTINE) header.from=netlify.com
+Return-Path: <jjv222+caf_=joeversoza=gmail.com@nyu.edu>
+Received: from mx0b-00256a01.pphosted.com (mx0a-00256a01.pphosted.com. [148.163.150.240])
+        by mx.google.com with ESMTPS id x76si1637799pfd.43.2020.07.29.06.42.41
+        for <joeversoza@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 29 Jul 2020 06:42:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jjv222+caf_=joeversoza=gmail.com@nyu.edu designates 148.163.150.240 as permitted sender) client-ip=148.163.150.240;
+Authentication-Results: mx.google.com;
+       dkim=neutral (body hash did not verify) header.i=@netlify.com header.s=mandrill header.b="ag1oO/bT";
+       dkim=neutral (body hash did not verify) header.i=@mandrillapp.com header.s=mandrill header.b="M/YLQlMB";
+       arc=pass (i=1 spf=pass spfdomain=mandrillapp.com);
+       spf=pass (google.com: domain of jjv222+caf_=joeversoza=gmail.com@nyu.edu designates 148.163.150.240 as permitted sender) smtp.mailfrom="jjv222+caf_=joeversoza=gmail.com@nyu.edu";
+       dmarc=fail (p=REJECT sp=REJECT dis=QUARANTINE) header.from=netlify.com
+Received: from pps.filterd (m0142700.ppops.net [127.0.0.1])
+	by mx0b-00256a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 06TDdwb9016270
+	for <joeversoza@gmail.com>; Wed, 29 Jul 2020 09:42:41 -0400
+Received: from mail-lj1-f200.google.com (mail-lj1-f200.google.com [209.85.208.200])
+	by mx0b-00256a01.pphosted.com with ESMTP id 32js7ybk4p-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <joeversoza@gmail.com>; Wed, 29 Jul 2020 09:42:41 -0400
+Received: by mail-lj1-f200.google.com with SMTP id z6so2712286ljc.12
+        for <joeversoza@gmail.com>; Wed, 29 Jul 2020 06:42:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:dkim-signature:dkim-signature:from
+         :subject:reply-to:message-id:to:date:mime-version;
+        bh=7AGYr6p+EBc/IexAeGUQKAXDH4RB9cFAA2RBs+3R5qw=;
+        b=TIKgohmYPxIwAiZni60yj8URDsvbEriE7M+5flImZxuK+XcZHQHxZYethUGe5Ld5vW
+         d6pmVqVN/OJMy7RULfGObAd72Wfr4WLgbSoRVE3faiPjZhE3Nqf4lVCcO4X/AuFRJwe2
+         4WggVo7mZveWbKeGsBpJPXm3xO33oSq1B1rjZXuCnzgI4WoaryibVEPRh/x4seWjIOpo
+         YGa5Pu9nf9040WCnWmhH9RbPZE+TTHVACofqzFoqeukVTLO147IhyLK6eSTRoOmaoS8B
+         nF98NPccY/vAeXtDRwpcpqw6SwCDei2+7Jvef2Q4j8xynoNx+7t5VzlonUahqf0R3wri
+         B+mg==
+X-Gm-Message-State: AOAM5337jfyDDa0YhFJmhHO9FSeR6fd05H6txg2r1H4+2ctK9arn9oz/
+	WmKDLi6BSx4LKpzzDQUIkipjoDWz/eQ5mX8oNcCW8b8vd8VnUfBuxnIMs4KHH9qKZgJEPLDU9/W
+	civVfXtVWyQ62ZR3aazHB9EsSeK2Diipur3paBA==
+X-Received: by 2002:ac2:561b:: with SMTP id v27mr17431904lfd.22.1596030158948;
+        Wed, 29 Jul 2020 06:42:38 -0700 (PDT)
+X-Received: by 2002:ac2:561b:: with SMTP id v27mr17431896lfd.22.1596030158643;
+        Wed, 29 Jul 2020 06:42:38 -0700 (PDT)
+X-Forwarded-To: joeversoza@gmail.com
+X-Forwarded-For: jjv222@nyu.edu joeversoza@gmail.com
+Delivered-To: jjv222@nyu.edu
+Received: by 2002:a2e:4949:0:0:0:0:0 with SMTP id b9csp735139ljd;
+        Wed, 29 Jul 2020 06:42:37 -0700 (PDT)
+X-Received: by 2002:ac8:3042:: with SMTP id g2mr32160529qte.224.1596030157266;
+        Wed, 29 Jul 2020 06:42:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1596030157; cv=none;
+        d=google.com; s=arc-20160816;
+        b=n9lUTNAK8dcWoTeqL2y7cUrygc10ZnM8yuLeni4E5vcR/6QWjmJH6UaT8wt7cre72Y
+         ps3dzRycND7i/h4xM+XX9LCwRwTGf9lm6ugT3DdD2L80GWxqyUCXVw9LdfOgLeW5Ta/H
+         f+MPvR3vjEP3x0U3gpsGoftr4pssPdNc4YPusYryeh1ImfmfkIelEOfRyFXOs/ntdqc4
+         t9ZOrF+eoylmdYFz4x37lA5wAXHKxBYz31JXMXP9lpjf7jBTVX2kTra9LGcgrBPkCDrW
+         n+FK90VMZjoLFAEBb/qwSX5Nc8KqgVaWZ13jreXK39UWibTwDejFWwCgsZsR4o652gbJ
+         Y5gA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:date:to:message-id:reply-to:subject:from
+         :dkim-signature:dkim-signature;
+        bh=7AGYr6p+EBc/IexAeGUQKAXDH4RB9cFAA2RBs+3R5qw=;
+        b=Xe3WiZYOhN2FY/2wrUQl3ip17Ju9KuD/MsGe3gEnuaLo1fk1EeGSakdZrjXnVLf8yK
+         R4HcjUuWs0kNRU5tglDrcOs/LpOXBSBJtJZFkFxIroqVfvW64iVWqyY3dGOlOV6cWAM5
+         gZEkcy7H42q62pOhiRMCIurfYbzLjk2llhP9QXaxQqVpPGlcJJCnE6XAn324fLoTAkid
+         Sq4a2qFNAahXAg95Z3Tz7majKEXFlScNYIYoIybt0k8s740EU/SnEcXZXr9+E9j2IqZy
+         9UbZ7jhrw/F9vaClXfDhxoe/joCPRsrT/wtATvDfkUF8Ha3dcyym5CaCwypnZ4OVWAmP
+         7Ucg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=neutral (body hash did not verify) header.i=@netlify.com header.s=mandrill header.b="ag1oO/bT";
+       dkim=neutral (body hash did not verify) header.i=@mandrillapp.com header.s=mandrill header.b="M/YLQlMB";
+       spf=pass (google.com: domain of bounce-md_31128206.5f217ccb.v1-b171f3cbb31f413fa0ff961354492105@mandrillapp.com designates 198.2.179.10 as permitted sender) smtp.mailfrom=bounce-md_31128206.5f217ccb.v1-b171f3cbb31f413fa0ff961354492105@mandrillapp.com
+Received: from gmx6.home.nyu.edu (gmx38.home.nyu.edu. [216.165.32.229])
+        by mx.google.com with ESMTPS id x23si1280756qth.134.2020.07.29.06.42.37
+        for <jjv222@nyu.edu>
+        (version=TLS1_2 cipher=AES128-GCM-SHA256 bits=128/128);
+        Wed, 29 Jul 2020 06:42:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-md_31128206.5f217ccb.v1-b171f3cbb31f413fa0ff961354492105@mandrillapp.com designates 198.2.179.10 as permitted sender) client-ip=198.2.179.10;
+Received: from mx6.nyu.edu (mx6.local [10.100.100.246])
+	by gmx6.home.nyu.edu (8.14.9/8.14.9) with ESMTP id 06TDgaYk000224
+	for <jjv222@nyu.edu>; Wed, 29 Jul 2020 09:42:36 -0400 (EDT)
+Received: from mx0b-00256a01.pphosted.com (mx0b-00256a01.pphosted.com [67.231.153.242])
+	by mx6.nyu.edu (8.14.9/8.14.9) with ESMTP id 06TDgaf2000210
+	(version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256 verify=OK)
+	for <jjv222@nyu.edu>; Wed, 29 Jul 2020 09:42:36 -0400 (EDT)
+Received: from pps.filterd (m0144081.ppops.net [127.0.0.1])
+	by mx0b-00256a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id 06TDcmwi183956
+	for <jjv222@nyu.edu>; Wed, 29 Jul 2020 09:42:36 -0400
+Received: from mail179-10.suw41.mandrillapp.com (mail179-10.suw41.mandrillapp.com [198.2.179.10])
+	by mx0b-00256a01.pphosted.com with ESMTP id 32h2dgf62y-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <jjv222@nyu.edu>; Wed, 29 Jul 2020 09:42:36 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mandrill; d=netlify.com;
+ h=From:Subject:Reply-To:Message-Id:To:Date:MIME-Version:Content-Type; i=team@netlify.com;
+ bh=LINqSEn5+bLpSiZ65rTYP0inv9eBw8v6Ac/209GF9DY=;
+ b=ag1oO/bTbi6+M6gMMJRiwKGJevAVA2x52UfcLtPVdYyNh30a05cYL9mDJds7axTML9bZpiz7mQKy
+   oYgNBHFh9+oN3z7m3AS5rh63a+ZSIk3/qpRCDJuWSfdlKOHZ/y6wx8Def98IZk/C2PqTzqe/PGcY
+   PWidcEYIgbPkpg3Ci94=
+Received: from pmta04.mandrill.prod.suw01.rsglab.com (127.0.0.1) by mail179-10.suw41.mandrillapp.com id h45uco22s28c for <jjv222@nyu.edu>; Wed, 29 Jul 2020 13:42:35 +0000 (envelope-from <bounce-md_31128206.5f217ccb.v1-b171f3cbb31f413fa0ff961354492105@smtp-out-md.netlify.com>)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com; 
+ i=@mandrillapp.com; q=dns/txt; s=mandrill; t=1596030155; h=From : 
+ Subject : Reply-To : Message-Id : To : Date : MIME-Version : 
+ Content-Type : From : Subject : Date : X-Mandrill-User : 
+ List-Unsubscribe; bh=LINqSEn5+bLpSiZ65rTYP0inv9eBw8v6Ac/209GF9DY=; 
+ b=M/YLQlMBruPeTSyjxEDC2oLoyKd5pWiEVKpkYybjYtSo2MM+210TUf2fa9eZKPMrGMRrlr
+ xMLbikzHD8CzTLDlfnjkR3L9hVUsetmBQqBH/3kmc2agUbU82vcKSHBHC4vEg6Y37E2DXPJw
+ ilnYWsIKdiqTl0prTHnXqCu5FL8X0=
+From: Netlify <team@netlify.com>
+Subject: =?utf-8?Q?[Netlify]=20Welcome=20to=20Netlify.=20Let=E2=80=99s=20verify=20your=20email?=
+Received: from [35.202.204.34] by mandrillapp.com id b171f3cbb31f413fa0ff961354492105; Wed, 29 Jul 2020 13:42:35 +0000
+Reply-To: Netlify <team@netlify.com>
+Message-Id: <5f217ccaa5b01_866d3fee556d25f859885@bitballoon-api-bf6c8f677-bkc5k.mail>
+To: jjv222@nyu.edu
+X-Report-Abuse: Please forward a copy of this message, including all headers, to abuse@mandrill.com
+X-Report-Abuse: You can also report abuse here: http://mandrillapp.com/contact/abuse?id=31128206.b171f3cbb31f413fa0ff961354492105
+X-Mandrill-User: md_31128206
+Date: Wed, 29 Jul 2020 13:42:35 +0000
+Content-Type: multipart/alternative; boundary="_av-OCFfV-hVFDfIRNyd_dPS-Q"
+MIME-Version: 1.0
+X-Orig-IP: 198.2.179.10
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.235,18.0.687
+ definitions=2020-07-29_07:2020-07-29,2020-07-29 signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 suspectscore=10 clxscore=205
+ mlxlogscore=999 adultscore=0 impostorscore=0 malwarescore=0 bulkscore=0
+ phishscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0 priorityscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2006250000
+ definitions=main-2007290092
+X-Orig-IP: 209.85.208.200
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
+ impostorscore=0 clxscore=1011 priorityscore=1501 bulkscore=0 adultscore=0
+ mlxscore=0 spamscore=0 lowpriorityscore=0 phishscore=0 mlxlogscore=973
+ suspectscore=9 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2006250000 definitions=main-2007290092
+
+--_av-OCFfV-hVFDfIRNyd_dPS-Q
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+
+>
+
+li { text-indent: -1em; }
+table td { border-collapse: collapse; }
+
+Netlify Email
+
+96
+
+Netlify
+
+{
+"@context":
+"https://urldefense.proofpoint.com/v2/url?u=3Dhttp-3A__schema.org&d=3DDwIFa=
+Q&c=3DslrrB7dE8n7gBJbeO0g-IQ&r=3DIV08abQlLbRexCpKHoRfbA&m=3DZn3kxyMFEL26QWR=
+XbNm9d9tDfK37Okr3JDIg2XvnAp8&s=3DmDo0S6ZGLNC2_NFYkIR_wK_sGq4xzn_eHdbDfXcW86=
+8&e=3D ",
+"@type":
+"EmailMessage",
+"potentialAction": {
+"@type":
+"ViewAction",
+"target":
+"https://urldefense.proofpoint.com/v2/url?u=3Dhttps-3A__app.netlify.com_sig=
+nup-3Fredirect-3Dhttps-3A__app.netlify.com_-23verify-5Ftoken-3D5f217cca51ad=
+7a866d449028-2D38493086-26new-5Fuser-3Dtrue&d=3DDwIFaQ&c=3DslrrB7dE8n7gBJbe=
+O0g-IQ&r=3DIV08abQlLbRexCpKHoRfbA&m=3DZn3kxyMFEL26QWRXbNm9d9tDfK37Okr3JDIg2=
+XvnAp8&s=3Dk1JBaoOV37kN_tNJAq58589bDI4Y6wDwmsJZFkvDEpw&e=3D ",
+"url":
+"https://urldefense.proofpoint.com/v2/url?u=3Dhttps-3A__app.netlify.com_sig=
+nup-3Fredirect-3Dhttps-3A__app.netlify.com_-23verify-5Ftoken-3D5f217cca51ad=
+7a866d449028-2D38493086-26new-5Fuser-3Dtrue&d=3DDwIFaQ&c=3DslrrB7dE8n7gBJbe=
+O0g-IQ&r=3DIV08abQlLbRexCpKHoRfbA&m=3DZn3kxyMFEL26QWRXbNm9d9tDfK37Okr3JDIg2=
+XvnAp8&s=3Dk1JBaoOV37kN_tNJAq58589bDI4Y6wDwmsJZFkvDEpw&e=3D ",
+"name": "Verify
+email"
+},
+"publisher": {
+"@type":
+"Organization",
+"name": "Netlify",
+"url":
+"https://urldefense.proofpoint.com/v2/url?u=3Dhttps-3A__www.netlify.com&d=
+=3DDwIFaQ&c=3DslrrB7dE8n7gBJbeO0g-IQ&r=3DIV08abQlLbRexCpKHoRfbA&m=3DZn3kxyM=
+FEL26QWRXbNm9d9tDfK37Okr3JDIg2XvnAp8&s=3D7s44eDxfZFUoep_4EYT0qwY3lMJfmxe-ko=
+a5SlSR-M8&e=3D "
+}
+}
+
+Welcome
+to Netlify.
+Let=E2=80=99s verify your email.
+
+You=E2=80=99re
+one click away!
+
+Verify
+email ( https://urldefense.proofpoint.com/v2/url?u=3Dhttps-3A__app.netlify.=
+com_signup-3Fredirect-3Dhttps-3A__app.netlify.com_-23verify-5Ftoken-3D5f217=
+cca51ad7a866d449028-2D38493086-26new-5Fuser-3Dtrue&d=3DDwIFaQ&c=3DslrrB7dE8=
+n7gBJbeO0g-IQ&r=3DIV08abQlLbRexCpKHoRfbA&m=3DZn3kxyMFEL26QWRXbNm9d9tDfK37Ok=
+r3JDIg2XvnAp8&s=3Dk1JBaoOV37kN_tNJAq58589bDI4Y6wDwmsJZFkvDEpw&e=3D  )
+
+About Netlify ( https://urldefense.proofpoint.com/v2/url?u=3Dhttps-3A__www.=
+netlify.com_&d=3DDwIFaQ&c=3DslrrB7dE8n7gBJbeO0g-IQ&r=3DIV08abQlLbRexCpKHoRf=
+bA&m=3DZn3kxyMFEL26QWRXbNm9d9tDfK37Okr3JDIg2XvnAp8&s=3DyOEMLBBZf4x-fVn0tMSr=
+1RvXSCskSUKl-ogemxadn94&e=3D  )
+=E2=80=A2 Support ( https://urldefense.proofpoint.com/v2/url?u=3Dhttps-3A__=
+www.netlify.com_support_&d=3DDwIFaQ&c=3DslrrB7dE8n7gBJbeO0g-IQ&r=3DIV08abQl=
+LbRexCpKHoRfbA&m=3DZn3kxyMFEL26QWRXbNm9d9tDfK37Okr3JDIg2XvnAp8&s=3D_11c_zxF=
+qh7YUhdN6sA2y5IiWCPjUzOhOfdsckPDlU4&e=3D  )
+
+2325 3rd Street Suite 215
+=E2=80=A2 San Francisco, CA 94107
+
+
+--_av-OCFfV-hVFDfIRNyd_dPS-Q
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+  <head> </head>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0" />
+    <meta name=3D"x-apple-disable-message-reformatting" />
+    <!--[if !mso]><!-->
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+    <!--<![endif]-->
+    <style type=3D"text/css">
+      * {
+        text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        mso-line-height-rule: exactly;
+      }
+
+      div[style*=3D"margin: 16px 0"] {
+        margin: 0 !important;
+      }
+
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+
+      .ReadMsgBody,
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+    </style>
+    <!--[if gte mso 9]>
+      <style type=3D"text/css">
+      li { text-indent: -1em; }
+      table td { border-collapse: collapse; }
+      </style>
+      <![endif]-->
+    <title>Netlify Email</title>
+    <style> @media (max-width:560px) {
+  .block.card .block__cell {
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+  }
+
+  .card {
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+  }
+}
+</style><!-- content -->
+    <!--[if gte mso 9]><xml>
+       <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+       </o:OfficeDocumentSettings>
+      </xml><![endif]-->
+  </head>
+  <body class=3D"body" style=3D"background-color: #EFF2F3; margin: 0; width=
+: 100%;">
+    <table class=3D"bodyTable" role=3D"presentation" width=3D"100%" align=
+=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: =
+100%; background-color: #EFF2F3; margin: 0;" bgcolor=3D"#EFF2F3">
+      <tr>
+        <td class=3D"body__content" align=3D"left" width=3D"100%" valign=3D=
+"top" style=3D"color: #2E3B42; font-family: -apple-system,BlinkMacSystemFon=
+t,=E2=80=9CSegoe UI=E2=80=9D,Roboto,Helvetica,Arial,sans-serif; font-size: =
+16px; line-height: 24px;">
+          <div class=3D"container" style=3D"margin: 0 auto; max-width: 600p=
+x; width: 100%;"> <!--[if mso | IE]> <table class=3D"container__table__ie" =
+role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"margin-right: auto; margin-left: auto;width: 600px"
+              width=3D"600" align=3D"center">
+              <tr>
+                <td> <![endif]--> <table class=3D"container__table" role=3D=
+"presentation" border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                    <tr class=3D"container__row">
+                      <td class=3D"container__cell" width=3D"100%" align=3D=
+"left" valign=3D"top">
+                        <div class=3D"email-header block" style=3D"width: 1=
+00%; padding: 16px 0;"> <!--[if mso | IE]> <table class=3D"block__table__ie=
+" role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width: 100%"
+                            width=3D"600">
+                            <tr>
+                              <td> <![endif]--> <table class=3D"block__tabl=
+e" role=3D"presentation" border=3D"0" align=3D"center" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%">
+                                  <tr class=3D"block__row">
+                                    <td class=3D"block__cell" width=3D"100%=
+" align=3D"left" valign=3D"top" style=3D"padding: 16px 0;">
+                                      <center><img alt=3D"Netlify" class=3D=
+"logo img__block" src=3D"https://outbound-emails.netlify.com/images/logo-20=
+18.png" border=3D"0" style=3D"text-decoration: none; padding: 0; outline: n=
+one; line-height: 100%; border: 0; display: block; max-width: 100%; margin:=
+ 0 auto; height: 40px;" height=3D"40" /></center>
+                                    </td>
+                                  </tr>
+                                </table> <!--[if mso | IE]> </td>
+                            </tr>
+                          </table> <![endif]--> </div>
+                        <div class=3D"card block" style=3D"width: 100%; bac=
+kground-color: #FFFFFF; border-radius: 8px; box-sizing: border-box; padding=
+: 0 20px; margin-bottom: 16px;"> <!--[if mso | IE]> <table class=3D"block__=
+table__ie"
+                            role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width: 100%" width=3D"600">
+                            <tr>
+                              <td> <![endif]--> <table class=3D"block__tabl=
+e" role=3D"presentation" border=3D"0" align=3D"center" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%">
+                                  <tr class=3D"block__row">
+                                    <td class=3D"block__cell" width=3D"100%=
+" align=3D"left" valign=3D"top" style=3D"background-color: #FFFFFF; border-=
+radius: 8px; box-sizing: border-box; padding: 0 20px;" bgcolor=3D"#FFFFFF">
+                                      <script type=3D"application/ld+json">
+                                        {
+                                          "@context": "http://schema.org",
+                                          "@type": "EmailMessage",
+                                          "potentialAction": {
+                                            "@type": "ViewAction",
+                                            "target": "https://app.netlify.=
+com/signup?redirect=3Dhttps://app.netlify.com/#verify_token=3D5f217cca51ad7=
+a866d449028-38493086&new_user=3Dtrue",
+                                            "url": "https://app.netlify.com=
+/signup?redirect=3Dhttps://app.netlify.com/#verify_token=3D5f217cca51ad7a86=
+6d449028-38493086&new_user=3Dtrue",
+                                            "name": "Verify email"
+                                          },
+                                          "publisher": {
+                                            "@type": "Organization",
+                                            "name": "Netlify",
+                                            "url": "https://www.netlify.com"
+                                          }
+                                        }
+                                      </script>
+                                      <h1 id=3D"welcome-to-netlify-br-let-s=
+-verify-your-email" class=3D"header h1" style=3D"color: #2E3B42; font-famil=
+y: -apple-system,BlinkMacSystemFont,=E2=80=9CSegoe UI=E2=80=9D,Roboto,Helve=
+tica,Arial,sans-serif; font-size: 28px; line-height: 40px; margin: 40px 0 2=
+4px; text-align: center; font-weight: 600;">Welcome
+                                        to Netlify.<br />Let=E2=80=99s veri=
+fy your email.</h1>
+                                      <p class=3D"text p" style=3D"display:=
+ block; color: #2E3B42; font-family: -apple-system,BlinkMacSystemFont,=E2=
+=80=9CSegoe UI=E2=80=9D,Roboto,Helvetica,Arial,sans-serif; font-size: 16px;=
+ line-height: 24px; margin: 40px 0;"></p>
+                                      <p class=3D"text-center text p" style=
+=3D"display: block; color: #2E3B42; font-family: -apple-system,BlinkMacSyst=
+emFont,=E2=80=9CSegoe UI=E2=80=9D,Roboto,Helvetica,Arial,sans-serif; font-s=
+ize: 16px; line-height: 24px; margin: 40px 0; text-align: center;">You=E2=
+=80=99re
+                                        one click away!</p>
+                                      <div class=3D"button">
+                                        <table role=3D"presentation" width=
+=3D"100%" align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                          <tr>
+                                            <td>
+                                              <table role=3D"presentation" =
+width=3D"auto" align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" class=3D"button__table" style=3D"margin: 16px auto 40px;">
+                                                <tr>
+                                                  <td align=3D"center" clas=
+s=3D"button__cell" style=3D"background-color: #00AD9F; border-radius: 4px; =
+box-shadow: 0 2px 4px 0 #E2E4E4; min-width: 144px; padding: 8px 12px;" bgco=
+lor=3D"#00AD9F"><a href=3D"https://urldefense.proofpoint.com/v2/url?u=3Dhtt=
+ps-3A__mandrillapp.com_track_click_31128206_app.netlify.com-3Fp-3DeyJzIjoiR=
+ERhZ3Q1eHVsLS1QT0d2emtqZENQY1F6RjZjIiwidiI6MSwicCI6IntcInVcIjozMTEyODIwNixc=
+InZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2FwcC5uZXRsaWZ5LmNvbVxcXC9zaWdudXA=
+-5FcmVkaXJlY3Q9aHR0cHM6XFxcL1xcXC9hcHAubmV0bGlmeS5jb21cXFwvI3ZlcmlmeV90b2tl=
+bj01ZjIxN2NjYTUxYWQ3YTg2NmQ0NDkwMjgtMzg0OTMwODYmbmV3X3VzZXI9dHJ1ZVwiLFwiaWR=
+cIjpcImIxNzFmM2NiYjMxZjQxM2ZhMGZmOTYxMzU0NDkyMTA1XCIsXCJ1cmxfaWRzXCI6W1wiYW=
+ExNzdhN2ZkZDFlZDFlZTc3YjAwYzEwY2M3ZTQ0NjA2MmIzODY5ZlwiXX0ifQ&amp;d=3DDwMFaQ=
+&amp;c=3DslrrB7dE8n7gBJbeO0g-IQ&amp;r=3DIV08abQlLbRexCpKHoRfbA&amp;m=3DZn3k=
+xyMFEL26QWRXbNm9d9tDfK37Okr3JDIg2XvnAp8&amp;s=3DupckcoL-i9eRgD9UlOPoJBIabWh=
+jNInUkAOSjCTIXHA&amp;e=3D" class=3D"button__link" style=3D"color: #FFFFFF; =
+text-decoration: none; font-weight: 500; background-color: #00AD9F; text-al=
+ign: center; display: inline-block;"><span class=3D"button__text" style=3D"=
+color: #FFFFFF; text-decoration: none;">Verify
+                                                        email</span></a></t=
+d>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div></p>
+                                    </td>
+                                  </tr>
+                                </table> <!--[if mso | IE]> </td>
+                            </tr>
+                          </table> <![endif]--> </div>
+                        <!-- Itemized receipt template footer -->
+                        <div class=3D"email-footer block" style=3D"width: 1=
+00%; color: #878E92; font-size: 14px; line-height: 22px; padding-top: 16px;=
+ text-align: center;"> <!--[if mso | IE]> <table class=3D"block__table__ie"=
+ role=3D"presentation"
+                            border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"width: 100%" width=3D"600">
+                            <tr>
+                              <td> <![endif]--> <table class=3D"block__tabl=
+e" role=3D"presentation" border=3D"0" align=3D"center" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%">
+                                  <tr class=3D"block__row">
+                                    <td class=3D"block__cell" width=3D"100%=
+" align=3D"left" valign=3D"top" style=3D"padding-top: 16px;">
+                                      <p class=3D"text p" style=3D"display:=
+ block; font-family: -apple-system,BlinkMacSystemFont,=E2=80=9CSegoe UI=E2=
+=80=9D,Roboto,Helvetica,Arial,sans-serif; margin: 40px 0; color: #878E92; f=
+ont-size: 14px; line-height: 22px; text-align: center;">
+                                        <a href=3D"https://urldefense.proof=
+point.com/v2/url?u=3Dhttps-3A__mandrillapp.com_track_click_31128206_www.net=
+lify.com-3Fp-3DeyJzIjoicGhQZE5lS2FVX3owVWp1azUzajNaT1hfSXUwIiwidiI6MSwicCI6=
+IntcInVcIjozMTEyODIwNixcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5uZXR=
+saWZ5LmNvbVxcXC9cIixcImlkXCI6XCJiMTcxZjNjYmIzMWY0MTNmYTBmZjk2MTM1NDQ5MjEwNV=
+wiLFwidXJsX2lkc1wiOltcIjY3N2RhYzg0NmYyYzA4YzIzMTE3YWY3NDAxMDg0Mjc3YTUzMjZlZ=
+WFcIl19In0&amp;d=3DDwMFaQ&amp;c=3DslrrB7dE8n7gBJbeO0g-IQ&amp;r=3DIV08abQlLb=
+RexCpKHoRfbA&amp;m=3DZn3kxyMFEL26QWRXbNm9d9tDfK37Okr3JDIg2XvnAp8&amp;s=3DJ9=
+OgAhddOT6Cbq6WHKJ6hN3SsG6z6pj365JqP511Sq8&amp;e=3D" class=3D"a" style=3D"fo=
+nt-weight: 500; padding: 0 4px; color: #2E3B42; text-decoration: none;"><sp=
+an class=3D"a__text" style=3D"color: #2E3B42; text-decoration: none;">About=
+ Netlify</span></a>
+                                        =E2=80=A2 <a href=3D"https://urldef=
+ense.proofpoint.com/v2/url?u=3Dhttps-3A__mandrillapp.com_track_click_311282=
+06_www.netlify.com-3Fp-3DeyJzIjoiRVhRaWt4c2VhUFAyeTdnN0NSZ0R6NWdnR29ZIiwidi=
+I6MSwicCI6IntcInVcIjozMTEyODIwNixcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL=
+3d3dy5uZXRsaWZ5LmNvbVxcXC9zdXBwb3J0XFxcL1wiLFwiaWRcIjpcImIxNzFmM2NiYjMxZjQx=
+M2ZhMGZmOTYxMzU0NDkyMTA1XCIsXCJ1cmxfaWRzXCI6W1wiZDE1N2RmMTYyNzAzNGE1MzQ3MjA=
+2ZTI5ZTU2Mzc1YjhhZTVjZTQxYlwiXX0ifQ&amp;d=3DDwMFaQ&amp;c=3DslrrB7dE8n7gBJbe=
+O0g-IQ&amp;r=3DIV08abQlLbRexCpKHoRfbA&amp;m=3DZn3kxyMFEL26QWRXbNm9d9tDfK37O=
+kr3JDIg2XvnAp8&amp;s=3DENkRUXZPNNdtblFS9t_G9Cy6WH65g317xt9W78v6S7A&amp;e=3D=
+" class=3D"a" style=3D"font-weight: 500; padding: 0 4px; color: #2E3B42; te=
+xt-decoration: none;"><span class=3D"a__text" style=3D"color: #2E3B42; text=
+-decoration: none;">Support</span></a>
+                                      </p>
+                                      <p class=3D"text p" style=3D"display:=
+ block; font-family: -apple-system,BlinkMacSystemFont,=E2=80=9CSegoe UI=E2=
+=80=9D,Roboto,Helvetica,Arial,sans-serif; margin: 40px 0; margin-bottom: 40=
+px; color: #878E92; font-size: 14px; line-height: 22px; text-align: center;=
+">
+                                        2325 3rd Street Suite 215 =E2=80=A2=
+ San Francisco, CA 94107 </p>
+                                    </td>
+                                  </tr>
+                                </table> <!--[if mso | IE]> </td>
+                            </tr>
+                          </table> <![endif]--> </div>
+                      </td>
+                    </tr>
+                  </table> <!--[if mso | IE]> </td>
+              </tr>
+            </table> <![endif]--> </div>
+        </td>
+      </tr>
+    </table>
+    <div style=3D"display:none; white-space:nowrap; font-size:15px; line-he=
+ight:0;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &=
+nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+  <img src=3D"https://mandrillapp.com/track/open.php?u=3D31128206&id=3Db171=
+f3cbb31f413fa0ff961354492105" height=3D"1" width=3D"1"></body>
+</html>
+
+
+--_av-OCFfV-hVFDfIRNyd_dPS-Q--
+

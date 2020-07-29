@@ -1,0 +1,69 @@
+I"t<section class="intro-slide">
+  <h1 id="publishing-on-the-web">Publishing on the Web</h1>
+
+  <h3 id="polonsky--brine-001">Polonsky / Brine-001</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="publishing-on-the-web-topics">Publishing on the Web Topics</h2>
+
+  <ol>
+    <li>Static Sites</li>
+    <li>Content Management Systems</li>
+    <li>Niche Services:</li>
+  </ol>
+
+</section>
+<section>
+  <h2 id="static-sites">Static Sites</h2>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* _classic_ hosting (NYU Libraries web hosting)
+* services (GitHub Pages, Netlify, etc.)
+</code></pre></div>  </div>
+
+</section>
+
+<section>
+  <p>##</p>
+
+</section>
+
+<section>
+  <h2 id="static-sites-demo">Static Sites Demo</h2>
+
+  <ul>
+    <li class="fragment">uploading</li>
+  </ul>
+
+</section>
+<section>
+  <h2 id="content-management-systems">Content Management Systems</h2>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* hosted vs self hosted / on premise / "local"
+* popular: WordPress, Omeka
+* others: Readymag, Squarespace, Wix
+* CMS/plus: Joomla, Drupal
+</code></pre></div>  </div>
+
+</section>
+<section>
+  <h2 id="niche-services">Niche Services:</h2>
+
+  <ul>
+    <li>Story Maps</li>
+    <li>AirTable</li>
+    <li>Online Counterpart of Desktop Tools (Tableau Online, ArcGIS Online)</li>
+    <li>Other: https://observablehq.com/</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="for-small-teams-one-person">For Small Teams (One Person)</h2>
+
+  <ul>
+    <li>less to maintain is better</li>
+    <li>though less flexibility</li>
+  </ul>
+
+</section>
+:ET

@@ -1,0 +1,60 @@
+I"<section class="intro-slide">
+  <h1 id="introduction">Introduction</h1>
+
+  <h3 id="polonsky--brine-digital-humanities-internships">Polonsky / Brine Digital Humanities Internships</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="topics-covered">Topics Covered</h2>
+
+  <p><strong>Publishing on the web in 3 parts</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">Some background / context re: how the web works 🤯</li>
+    <li class="fragment">Tools for publishing on the web 🧰 🕸️</li>
+    <li class="fragment">Figuring out what you&#39;re actually making! 🤔 ✍️</li>
+  </ol>
+
+</section>
+
+<section>
+  <h2 id="approach">Approach</h2>
+
+  <p><strong>My background is in</strong>  &#8594;</p>
+
+  <ul>
+    <li class="fragment">Software engineering and technology operations management 🧑‍💻</li>
+    <li class="fragment">Small teams (from just a couple of people to ~50) 👥</li>
+    <li class="fragment"><em>bespoke</em> database driven web applications 🌐</li>
+    <li class="fragment">Mostly for non-profits and start-ups</li>
+  </ul>
+
+  <p class="fragment">This set of slides likely has a slight bias towards that experience, so&#8230;</p>
+
+</section>
+<section>
+  <h2 id="section">⚠️ ⚠️ ⚠️</h2>
+
+  <p>Caution&#8230; before we move forward:</p>
+
+  <p class="fragment">There isn&#39;t a <em>one size fits all</em> 🚫 👕 process for defining your project and publishing it on the web.</p>
+
+  <p class="fragment"><strong>Pick and choose strategies and methods based on your project&#39;s&#8230;</strong>  &#8594;</p>
+
+  <ul>
+    <li class="fragment">scope</li>
+    <li class="fragment">available resources (time, money, people, skills / experience)</li>
+    <li class="fragment">timeline</li>
+    <li class="fragment">maintainability</li>
+    <li class="fragment">quality</li>
+    <li class="fragment">flexibility</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="question--lets-figure-out-how-the-web-works">{:.question} 🆗 Let&#39;s <a href="web-basics.html">figure out how the web works</a>!</h2>
+</section>
+:ET

@@ -38,6 +38,10 @@ li {
   text-align: center;
 }
 
+.img {
+  margin: auto;
+  text-align: center;
+}
 body {
   font-family: 'Merriweather', serif;
 }
@@ -112,4 +116,9 @@ pre {
 
 aside {
 	display: none;
+}
+
+.question {
+	text-align: center;
+	font-size: 2em;
 }

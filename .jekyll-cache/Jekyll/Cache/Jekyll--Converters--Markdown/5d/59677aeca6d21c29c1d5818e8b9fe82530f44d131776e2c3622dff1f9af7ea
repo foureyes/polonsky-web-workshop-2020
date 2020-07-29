@@ -1,0 +1,83 @@
+I"‹<section>
+  <h2 class="question" id="sooo-you-want-to-make-a-website">Sooo&#8230; you want to make a website.</h2>
+
+  <h2 class="question fragment" id="whats-the-first-thing-you-do-sign-up-for-a-cms-and-start-adding-content-right-away">What&#39;s the first thing you do? Sign up for a CMS and start adding content right away?</h2>
+
+  <h2 class="question fragment" id="section">ðŸ¤”</h2>
+
+</section>
+
+<section class="intro-slide">
+  <h1 id="project-definition-and-documentation">Project Definition and Documentation</h1>
+
+  <h3 id="polonsky--brine-001">Polonsky / Brine-001</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="project-definition">Project Definition</h2>
+
+  <p><strong>What are some items to consider when defining a project (web or otherwise)?</strong></p>
+
+  <p>1 {:.fragment} Goals / Objectives
+2 {:.fragment} Success Criteria
+	* {:.fragment} measurable values that indicate the success of your project
+	* {:.fragment} number of users
+	* {:.fragment} page views</p>
+  <ol>
+    <li class="fragment">Audience</li>
+    <li class="fragment">Risks</li>
+  </ol>
+</section>
+
+<section>
+  <h2 id="whats-everyone-else-doing">What&#39;s Everyone Else Doing?</h2>
+
+  <p><strong>Look at similar sites; do you have to adhere to specific standards</strong></p>
+
+  <ul>
+    <li>standards, benchmarking</li>
+    <li>&quot;competitive&quot; landscape</li>
+    <li class="fragment">benchmarking</li>
+    <li class="fragment">competitive analysis</li>
+  </ul>
+
+</section>
+<section>
+  <p>##</p>
+  <ul>
+    <li>Target Audience: Personas</li>
+  </ul>
+</section>
+
+<section>
+  <p>##</p>
+
+  <ul>
+    <li>Site Requirements: Interviews, User Stories</li>
+  </ul>
+</section>
+
+<section>
+  <p>##</p>
+  <ul>
+    <li>Information Architecture: Wireframes, Site Maps</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="information-architecture-tools">Information Architecture Tools</h2>
+
+  <p>(In order of approximate ease-of-use)</p>
+
+  <ol>
+    <li class="fragment"><a href="https://balsamiq.com/">Balsamiq</a> (demo)</li>
+    <li class="fragment"><a href="https://www.figma.com/">Figma</a> (demo)</li>
+    <li class="fragment">Adobe Xd</li>
+    <li class="fragment">Axure</li>
+  </ol>
+
+</section>
+:ET

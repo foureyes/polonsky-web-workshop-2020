@@ -1,0 +1,536 @@
+I"R<section class="intro-slide">
+  <h1 id="a-high-level-overview-of-how-the-web-works">A High-Level Overview of How the Web Works</h1>
+
+  <h3 id="polonsky--brine-digital-humanities-internships">Polonsky / Brine Digital Humanities Internships</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="topics">Topics</h2>
+
+  <p><strong>In this set of slides, we&#39;ll cover:</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">The Internet vs the Web</li>
+    <li class="fragment">Client - Server</li>
+    <li class="fragment">Resources on the Web: HTML, CSS, JavaScript, Images</li>
+    <li class="fragment"><strong>Demo</strong>: networking tab, view source</li>
+    <li class="fragment">Why it&#39;s hard to save a web page for offline viewing</li>
+  </ul>
+
+  <p class="fragment"><strong>Resources</strong></p>
+
+  <ul>
+    <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web">Mozilla Developer Network - Getting started with the Web</a></li>
+  </ul>
+</section>
+
+<section>
+
+  <h2 class="question" id="whats-the-difference-between-the-internet-and-the-web-">What&#39;s the difference between the internet and the web? &#8594;</h2>
+
+  <div class="img">
+    <p><img src="../resources/images/internet.jpg" alt="keyboard as surfboard" /></p>
+  </div>
+
+</section>
+
+<section>
+  <h2 id="the-internet">The Internet</h2>
+
+  <p><strong>A global system of interconnected computer networks</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">a <em>network of networks</em></li>
+    <li class="fragment"><strong>TCP/IP</strong> - protocol that dictates how data is:
+      <ul>
+        <li class="fragment">addressed</li>
+        <li class="fragment"><em>packetized</em></li>
+        <li class="fragment">transmitted</li>
+        <li class="fragment">routed</li>
+        <li class="fragment">received</li>
+      </ul>
+    </li>
+    <li class="fragment">(we&#39;ll talk about protocols in a bit)</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="the-world-wide-web">The World Wide Web</h2>
+
+  <p><strong>A collection of resources&#8230;</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">such as HTML documents, images, etc.</li>
+    <li class="fragment">each retrievable by an identifier (URL)</li>
+    <li class="fragment">linked together via <em>hypertext</em> and <em>hyperlinks</em></li>
+    <li class="fragment"><strong>HTTP</strong> is the protocol used by the web to specify
+      <ul>
+        <li class="fragment">how resources should be requested over a network</li>
+        <li class="fragment">how a request should be responded to</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="other-services">Other Services</h2>
+
+  <p><strong>The web</strong> is just one of many services available on the internet&#8230; <strong>what are some others services and protocols on the internet?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>email</strong> (SMTP) ✉️</li>
+    <li class="fragment"><strong>chat</strong> (XMPP, OSCAR, IRC) 🗣️</li>
+    <li class="fragment"><strong>file transfer</strong> (FTP) ↕️</li>
+    <li class="fragment"><strong>voice</strong> (SIP, Skype protocol) ☎️</li>
+    <li class="fragment">these are all examples of <strong>network protocols</strong> -  ways of communicating over a network</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="protocols">Protocols</h2>
+
+  <p>Hm. All this talk about protocols but &#8230; <strong>what <em>exactly</em> is a protocol?</strong> &#8594;</p>
+
+  <p class="fragment">It&#39;s a bunch of rules and conventions for some activity (like communication ☎️)</p>
+
+  <p class="fragment">For communication between <strong>computers</strong> 💻⬅️➡️💻  these rules may  govern:</p>
+
+  <ol class="fragment">
+    <li>the format for exchanging messages</li>
+    <li>a meaning (semantics) and syntax for these messages</li>
+    <li>the process involved in the communication
+      <ul>
+        <li>synchronization</li>
+        <li>delivery</li>
+        <li>etc.</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2 id="tcpip">TCP/IP</h2>
+
+  <p><strong>TCP/IP the Underlying Protocol of the Internet</strong></p>
+
+  <ul>
+    <li class="fragment">Other protocols, such as HTTP for the web, are built <em>on top</em> of TCP/IP</li>
+    <li class="fragment">We&#39;ll be skipping the details on TCP/IP
+      <ul>
+        <li class="fragment">If you&#39;re interested in how things work on a lower level, consider these resources:</li>
+        <li class="fragment"><a href="https://wizardzines.com/zines/networking/">A Zine About Computer Networking</a></li>
+        <li class="fragment"><a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">How Does the Internet Work</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="the-web">The Web</h2>
+
+  <p><strong>What was our definition of the web again?</strong> &#8594;</p>
+
+  <p class="fragment">A collection of interconnected documents (web pages) and other resources (images), retrievable by url and connected by <em>hyperlinks</em>.</p>
+
+</section>
+
+<section>
+  <h2 id="it-all-starts-with-a-url">It All Starts With a URL</h2>
+
+  <p>Each document or resource on the web is retrievable by a name, a <strong>URL</strong> (Uniform Resource Locator). <strong>What are the parts to a URL?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>scheme/protocol</strong> - http (er, browsers accept schema-less)</li>
+    <li class="fragment"><strong>domain or actual ip address</strong> - pizzaforyou.com</li>
+    <li class="fragment"><strong>port</strong> (optional) - 80 (default if http)</li>
+    <li class="fragment"><strong>path</strong> - /search</li>
+    <li class="fragment"><strong>query_string</strong> (optional) - ?type=vegan</li>
+    <li class="fragment"><strong>fragment_id</strong> (optional) - #topresult</li>
+  </ul>
+
+  <p class="fragment"><br />
+<code>scheme://domain:port/path?query_string#fragment_id</code></p>
+
+  <p class="fragment"><code>http://pizzaforyou.com:80/search?type=vegan#top_result</code></p>
+</section>
+
+<section>
+  <h2 id="http">HTTP</h2>
+
+  <p>To retrieve documents on the web, we use <strong>HTTP</strong> (Hyper Text Transfer Protocol).</p>
+
+  <p class="fragment"><strong>HTTP is a request-response protocol, a very basic text-based (at least for version 1.1) communication method between computers:</strong></p>
+
+  <ul>
+    <li class="fragment">one computer, <strong>the client</strong>, asks for a resource</li>
+    <li class="fragment">another computer, <strong>the server</strong>, sends back the requested resource</li>
+    <li class="fragment">HTTP defines the format and meaning of these messages, the <strong>request</strong> and <strong>response</strong></li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="client---server">Client - Server</h2>
+
+  <p>The computer/application <strong>asking for a resource</strong> is the <strong>client</strong> or <em>user-agent</em>. <strong>What are some examples of web clients?</strong>  &#8594;</p>
+
+  <ul>
+    <li class="fragment">any browser! Firefox, Chrome, Safari, Edge, etc.</li>
+  </ul>
+
+  <p class="fragment">The computer <strong>responding to these requests for resources</strong> is the <strong>server</strong>.</p>
+
+  <ul>
+    <li class="fragment">a <strong>web server</strong> is software that specializes in&#8230;</li>
+    <li class="fragment">accepting requests from clients</li>
+    <li class="fragment">and sending back a response</li>
+    <li class="fragment">typically, a web server is set up such that files from specific directories are able to be requested</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="http-continued">HTTP Continued</h2>
+
+  <p><strong>The interaction between your browser and a web server proceeds as follows</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">the browser attempts to connect to the server</li>
+    <li class="fragment">if the server is listening and <em>reachable</em>, a connection is made between the server and the client</li>
+    <li class="fragment">the browser sends a request message through the connection</li>
+    <li class="fragment">on the same connection, the web server gives back a response message</li>
+  </ol>
+
+  <p class="fragment"><strong>For every resource needed by the client, a new request must be made</strong> &#8594;</p>
+</section>
+
+<section>
+  <h2 id="a-request-message">A Request Message</h2>
+
+  <p><strong>When a client makes a request, what, minimally should be specified in that request?</strong> &#8594;</p>
+
+  <p class="fragment"><strong>An HTTP request consists of:</strong> &#8594;</p>
+
+  <ul class="fragment">
+    <li>the request method (what <em>kind</em> of request you&#39;re making)
+      <ul>
+        <li>for example, the client can request to <em>read</em> a resources (<strong>GET</strong>)</li>
+        <li>or it may want to update or add a resource (<strong>POST</strong>)</li>
+      </ul>
+    </li>
+    <li>the path to the resource</li>
+    <li>an optional <em>body</em> (for example, if you&#39;re uploading a file, the file data goes here)</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="generating-requests">Generating Requests</h2>
+
+  <p><strong>What causes your browser to send a request message to a web server?</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">typing in the url bar ⌨️</li>
+    <li class="fragment">clicking on a link 🖱️</li>
+    <li class="fragment">clicking submit on a form ↩️</li>
+    <li class="fragment">a page that you&#39;re already on (😮) <strong>what, how?</strong>
+      <ul>
+        <li class="fragment">maybe a page needs images</li>
+        <li class="fragment">&#8230;or styles (via CSS)</li>
+        <li class="fragment">&#8230;or interaction (via JavaScript)</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2 id="a-response-message">A Response Message</h2>
+
+  <p><strong>When a server responds to a request, what, minimally should be specified in the response?</strong> &#8594;</p>
+
+  <p class="fragment">An HTTP Response consists of:</p>
+
+  <ul>
+    <li class="fragment">the actual resource (this is typically contained in the response message&#39;s body)</li>
+    <li class="fragment">some <em>status</em> (🆗, Not Found, etc.)
+      <ul>
+        <li class="fragment">in the form of both a numeric code and description</li>
+        <li class="fragment">some codes that may be familiar</li>
+        <li class="fragment"><strong>200 OK</strong> - request was successful!</li>
+        <li class="fragment"><strong>404 Not Found</strong> - resource was not found, but may be available again in the future</li>
+        <li class="fragment"><strong>500 Server Error</strong> - generic server error</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="a-sample-request">A Sample Request</h2>
+
+  <p>A request&#8230;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+GET /menu/lunch HTTP/1.1
+Host: mycooldomain.pizza
+Connection: keep-alive
+Cache-Control: max-age=0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
+Accept-Language: en-US,en;q=0.8
+</code></pre>
+</section>
+
+<section>
+  <h2 id="a-sample-response">A Sample Response</h2>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+HTTP/1.1 200 OK
+Date: Thu, 18 Feb 2016 15:23:39 GMT
+Server: Apache/2.2.15 (Red Hat)
+Accept-Ranges: bytes
+Content-Length: 163
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: STATICSERVERID=s3; path=/
+Cache-control: private
+
+<h2>Check out this menu!</h2>
+</code></pre>
+</section>
+
+<section>
+  <h2 id="resources-on-the-web">Resources on the Web</h2>
+
+  <p><strong>What are some examples of resources that a client can request from a server again?</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">HTML documents</li>
+    <li class="fragment">styles (CSS)</li>
+    <li class="fragment">browser based programs / interactivity (JavaScript)</li>
+    <li class="fragment">multimedia, such as: images, audio, text</li>
+  </ol>
+
+</section>
+
+<section>
+  <h2 id="lets-talk-html">Let&#39;s Talk HTML</h2>
+
+  <p><strong>HTML</strong> is the language that describes the <strong>structure</strong> and <strong>semantic content</strong> of a document on the web; it consists of:</p>
+
+  <ul>
+    <li class="fragment"><strong>content</strong> (just plain text)</li>
+    <li class="fragment">and elements (tags) that give structure to the <strong>text</strong></li>
+  </ul>
+
+</section>
+
+<section data-background="#440000">
+  <h1 id="html-is-for-content-and-structure">HTML is for content and structure</h1>
+
+</section>
+
+<section>
+  <h2 id="html-is-a-mark-up-language">HTML is a <em>Mark Up</em> Language</h2>
+
+  <p><strong>HTML</strong> stands for Hypertext Markup Language. We get the Hypertext part.</p>
+
+  <p><strong>What about the markup part?</strong> &#8594;</p>
+
+  <ul class="fragment">
+    <li>a markup language is a method of annotating text&#8230;
+      <ul>
+        <li>where the markup itself is syntactically distinguishable from the content</li>
+        <li>markup is applied to text by using <em>tags</em></li>
+      </ul>
+    </li>
+    <li>HTML is generally not considered a <em>programming</em> language</li>
+    <li>HTML documents typically in in (you guessed it!), <code class="language-plaintext highlighter-rouge">.html</code></li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="elements-and-tags">Elements and Tags</h2>
+
+  <p><strong>You&#39;ve likely encountered this before</strong>.</p>
+
+  <p>An <strong>element</strong> a single part of an HTML document; it encompasses both structure and (optionally) content: a paragraph, the head of the document, etc.</p>
+
+  <ul>
+    <li>an element is made up of <strong>tags</strong> and, optionally, text: <code>&lt;p&gt;Some Content&lt;/p&gt;</code></li>
+    <li><strong>tags</strong> are used to mark the start and end of an HTML element: <code>&lt;p&gt; ... &lt;/p&gt;</code></li>
+    <li>an <strong>opening tag</strong> is an element&#39;s name surrounded by angle brackets: <code>&lt;p&gt;</code></li>
+    <li>an <strong>closing tag</strong> is an element&#39;s name prefixed with a forward slash and surrounded by angle brackets: <code>&lt;/p&gt;</code></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="attributes">Attributes</h2>
+
+  <p>A <strong>tag</strong> can contain <strong>attributes</strong>. <strong>In the context of HTML, what&#39;s an attribute?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">an <strong>attribute</strong> is part of a tag that provides additional information about an element</li>
+    <li class="fragment">it&#39;s composed of a name/value pair joined by an equal sign</li>
+    <li class="fragment">it&#39;s is placed after the name of the element in a tag, but before the last angle bracket: <code>&lt;img src="logo.png"&gt;</code></li>
+    <li class="fragment">the value doesn&#39;t have to be quoted, but it&#39;s good practice to do so&#8230; to avoid issues like this:<code>&lt;input type=text value=what is this&gt;</code></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="a-quick-diagram">A Quick Diagram</h2>
+
+  <p><strong>Name the parts of this markup</strong> &#8594;</p>
+
+  <pre><code data-trim="" contenteditable="">
+&lt;a href="www.nyu.edu&gt;NYu&lt;/a&gt;
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+<!--             element
+                    |
+     +--------------+-----------+
+     |                          | 
+    &lt;a href="www.nyu.edu"&gt;NYU&lt;/a&gt;
+     |     |                    |
+     |   attribute              |
+start tag                    end tag
+-->
+</code></pre>
+</section>
+
+<section>
+  <h2 id="hm-so-many-elements">Hm. So Many Elements.</h2>
+
+  <p><strong>There are a ton of HTML elements that we can use.</strong></p>
+
+  <p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list">Check out the list of valid HTML5 elements on MDN</a></p>
+
+  <p>Whew! <strong>How do we know which element we should use for a mark-up? How do we choose? (easy for headers, images links, etc&#8230; but other content?)</strong> &#8594;</p>
+
+  <p class="fragment">Use the one that describes / represents the content best.</p>
+
+  <ul class="fragment">
+    <li>if a tag doesn&#39;t exist that describes your content, you&#39;ll often see a generic container element, like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">div</a></li>
+    <li>(a div doesn&#39;t inherently represent anything)</li>
+    <li>but, with so many tags, it should be easy to find one that&#39;s appropriate (there are a bunch of new ones)
+      <ul>
+        <li>if your element contains navigation elements, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">nav</a></li>
+        <li>if it&#39;s your header or footer, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">header</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">footer</a>
+  *etc.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section data-background="#440000">
+  <h2 id="remember-mark-up-is-for-structure-and-meaning-not-style">Remember, Mark-up is for structure and meaning, not style</h2>
+</section>
+
+<section>
+  <h2 id="css">CSS</h2>
+
+  <p><strong>We use Cascading Style Sheets</strong> to style our pages.</p>
+
+  <ul>
+    <li>CSS is a stylesheet language</li>
+    <li>used to describe the presentation and layout of an HTML document</li>
+    <li>for the next few slides, I&#39;m assuming some very <em>basic</em> knowledge of CSS</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="definitions">Definitions</h2>
+
+  <p><strong>The following is a single CSS rule:</strong></p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+
+selector
+|   property    value 
+|      |        |		    
+h3 {
+	font-size: 2em; ---+
+	                   |---- declaration block
+	color: #ff0000; ---+
+	|_____________|
+          |
+		  declaration
+}
+
+</code></pre>
+
+  <p class="fragment">Use CSS rules to target elements in a web page and apply styles by adjusting property values.</p>
+
+</section>
+
+<section>
+  <h2 id="definitions-1">Definitions</h2>
+
+  <p>Just to get some terminology straight. <strong>When talking about CSS.</strong> &#8594;</p>
+
+  <ul>
+    <li><strong>rule</strong> - the selector and all of its accompanying property:value pairs</li>
+    <li><strong>selector</strong> - specifies an element(s) within the markup where styles will be applied</li>
+    <li><strong>property</strong> - the name of a particular style</li>
+    <li><strong>value</strong> - the <em>actual</em> style being applied on the property</li>
+    <li><strong>declaration</strong> - the property and its value - for example: <code>color:red;</code></li>
+    <li><strong>declaration block</strong> - the curly braces and all of the declarations within them
+      <ul>
+        <li>there can be multiple <strong>declarations</strong> in each <strong>declaration block</strong>, separated by semicolons (<code>;</code>&#39;s)</li>
+        <li>(<em>technically</em>, you can leave off the semicolon of the last declaration, but that&#39;s considered bad practice &#8211; potentially leads to errors when you add another declaration)</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="a-missing-ingredient">A Missing Ingredient</h2>
+
+  <p><strong>Content and style are major parts of a web page, but there&#39;s a key component missing</strong> &#8594;</p>
+
+  <p class="fragment">Interaction! For example:</p>
+
+  <ul>
+    <li class="fragment"><strong>clicking on a button</strong> trigger an animation</li>
+    <li class="fragment"><strong>scrolling</strong> may cause new search results to appear</li>
+    <li class="fragment"><strong>typing</strong> in a text box may bring up autocomplete suggestions</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="javascript">JavaScript</h2>
+
+  <p>All of the interactions i
+JavaScript</p>
+
+</section>
+
+<section>
+  <h2 id="everything-together">Everything Together</h2>
+
+  <p><strong>Through your browser&#39;s &quot;development tools&quot;, let&#39;s take a look how all of this (HTTP, HTML, CSS, images) work together</strong> &#8594;</p>
+
+  <p>(These instructions are for Chrome, but similar functionality exists in Firefox, Safari, etc.)</p>
+
+  <ol>
+    <li class="fragment">go to View &#8594; Developer &#8594; Developer Tools</li>
+    <li class="fragment">click on Network</li>
+    <li class="fragment">go to the page</li>
+    <li class="fragment">watch the requests fly by!</li>
+    <li class="fragment">(why so many!?)</li>
+  </ol>
+</section>
+
+<section>
+  <h2 class="question" id="lets-try-using-chrome-to-see-some-requests-responses-and-markup">Let&#39;s try using Chrome to see some requests, responses, and markup!</h2>
+</section>
+
+<section>
+  <h2 class="question" id="why-might-it-be-tricky-to-save-a-website-for-archival-purposes">Why might it be tricky to <em>save</em> a website for archival purposes?</h2>
+</section>
+:ET

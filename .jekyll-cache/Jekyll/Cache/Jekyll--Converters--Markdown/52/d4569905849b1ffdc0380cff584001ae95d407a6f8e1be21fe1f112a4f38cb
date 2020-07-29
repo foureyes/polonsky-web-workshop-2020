@@ -1,0 +1,66 @@
+I"t<section class="intro-slide">
+  <h1 id="introduction">Introduction</h1>
+
+  <h3 id="polonsky--brine-digital-humanities-internships">Polonsky / Brine Digital Humanities Internships</h3>
+
+  <p><small></small></p>
+</section>
+
+<section>
+  <h2 id="topics-covered">Topics Covered</h2>
+
+  <p><strong>Publishing on the web in 3 parts</strong> &#8594;</p>
+
+  <ol>
+    <li class="fragment">Some background / context re: how the web works 🤯</li>
+    <li class="fragment">Tools for publishing on the web 🧰 🕸️</li>
+    <li class="fragment">Figuring out what you&#39;re actually making! 🤔 ✍️</li>
+  </ol>
+
+</section>
+
+<section>
+  <h2 id="approach">Approach</h2>
+
+  <p><strong>My background is</strong></p>
+
+  <ul>
+    <li class="fragment">Software engineering and technology team management 🧑‍💻</li>
+    <li class="fragment">I&#39;ve worked in small teams (from just a couple of people to ~50)</li>
+    <li class="fragment">Most of my work involved <em>bespoke</em> database driven web applications</li>
+  </ul>
+
+  <p class="fragment">This set of slides has a slight bias towards that experience.</p>
+
+  <p class="fragment">Some processes or methodology may not be 💯 relevant to your project, so&#8230;</p>
+</section>
+<section>
+  <h2 id="section">⚠️ ⚠️ ⚠️</h2>
+
+  <p>Caution&#8230; before we move forward:</p>
+
+  <p class="fragment">There isn&#39;t a <em>one size fits all</em> 🚫 👕 process for defining your project and publishing it on the web.</p>
+
+  <p class="fragment"><strong>Pick and choose strategies and methods based on your project&#39;s&#8230;</strong>  &#8594;</p>
+
+  <ul>
+    <li class="fragment">scope</li>
+    <li class="fragment">available resources (time, money, people, skills / experience)</li>
+    <li class="fragment">timeline</li>
+    <li class="fragment">maintainability</li>
+    <li class="fragment">quality</li>
+    <li class="fragment">flexibility</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="topics">Topics</h2>
+
+  <ol>
+    <li class="fragment">Project planning and documentation</li>
+    <li class="fragment">How the web works</li>
+    <li class="fragment">Publishing on the web</li>
+  </ol>
+</section>
+:ET
